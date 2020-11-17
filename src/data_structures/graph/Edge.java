@@ -5,10 +5,10 @@ public class Edge<V> {
     private Node<V> destination;
     private int weight;
 
-    public Edge(Node<V> origin, Node<V> destination, int distance) {
+    public Edge(Node<V> origin, Node<V> destination, int weight) {
         this.origin = origin;
         this.destination = destination;
-        this.weight = distance;
+        this.weight = weight;
     }
 
     public Node<V> getOrigin() {
