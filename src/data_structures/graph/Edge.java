@@ -27,11 +27,11 @@ public class Edge<V> {
         this.destination = destination;
     }
 
-    public double getDistance() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setDistance(int weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 

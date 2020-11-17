@@ -12,7 +12,7 @@ public class Graph<V> {
 
 	private Map<Integer, Node<V>> nodes; //adjList
 	
-	private Map<Node<V>, ArrayList<Node<V>>> adjacencyList;
+	private Map<String, ArrayList<Node<V>>> adjacencyList;
 	
 	
 
@@ -63,7 +63,9 @@ public class Graph<V> {
 		origin.addEdge(new Edge<V>(origin, destination, weight));
 	}
 
-	public void addConnectionToAdjacencyList(Integer hashCodeOrigin, Integer hashCodeDestination, int weight) {
-		
-	}
+//	public void addConnectionToAdjacencyList(Integer hashCodeOrigin, Integer hashCodeDestination, int weight) {
+//		Node<V> source = adjacencyList.get(hashCodeOrigin);
+//		
+//		
+//	}
 }
