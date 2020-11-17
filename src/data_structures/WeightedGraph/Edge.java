@@ -1,8 +1,5 @@
 package data_structures.WeightedGraph;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Edge<V> {
     private Node<V> origin;
     private Node<V> destination;
@@ -30,7 +27,12 @@ public class Edge<V> {
         this.destination = destination;
     }
 
-    public double getWeight() {
+    @Override
+    public String toString() {
+        return "";
+    }
+
+    public int getWeight() {
         return weight;
     }
 
@@ -38,10 +40,4 @@ public class Edge<V> {
         this.weight = weight;
     }
 
-    @Override
-    public String toString() {
-        return "";
-    }
-
- 
 }

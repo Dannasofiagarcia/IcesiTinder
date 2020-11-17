@@ -1,6 +1,6 @@
 package ui;
 
-import java.util.List;
+import java.util.LinkedList;
 
 import data_structures.WeightedGraph.Graph;
 import data_structures.WeightedGraph.Node;
@@ -25,27 +25,18 @@ public class Main {
 
         miGrafo.addConnection(a.hashCode(), d.hashCode(), 3);
 
-        miGrafo.addConnection(a.hashCode(), c.hashCode(), 3);
+        miGrafo.addConnection(a.hashCode(), c.hashCode(), 20);
 
-        miGrafo.addConnection(d.hashCode(), c.hashCode(), 3);
+        miGrafo.addConnection(d.hashCode(), c.hashCode(), 2);
 
         miGrafo.addConnection(c.hashCode(), e.hashCode(), 3);
 
         miGrafo.addConnection(a.hashCode(), b.hashCode(), 3);
 
-        List<Node<User>> amplitud = miGrafo.bfs(a.hashCode());
+        LinkedList<Node<User>> path = miGrafo.dijkstra(a.hashCode(), e.hashCode());
 
-        System.out.println("POR AMPLITUD\n");
-        for (int i = 0; i < amplitud.size(); i++) {
-            System.out.println(amplitud.get(i).getValue().userName);
-            amplitud.get(i).setVisited(false);
-        }
-
-        List<Node<User>> profundidad = miGrafo.dfs(a.hashCode());
-        System.out.println("\n\nPOR PROFUNDIDAD\n");
-
-        for (int i = 0; i < profundidad.size(); i++) {
-            System.out.println(profundidad.get(i).getValue().userName);
+        for (Node<User> node : path) {
+            System.out.println(node.getValue().userName);
         }
 
     }
