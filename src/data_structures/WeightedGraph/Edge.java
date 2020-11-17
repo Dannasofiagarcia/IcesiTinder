@@ -1,4 +1,7 @@
-package data_structures.graph;
+package data_structures.WeightedGraph;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Edge<V> {
     private Node<V> origin;
@@ -40,4 +43,5 @@ public class Edge<V> {
         return "";
     }
 
+ 
 }
