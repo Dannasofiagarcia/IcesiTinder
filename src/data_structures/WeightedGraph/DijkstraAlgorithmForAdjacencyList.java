@@ -1,4 +1,4 @@
-package data_structures;
+package data_structures.WeightedGraph;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,7 +12,7 @@ import java.util.Set;
 import data_structures.WeightedGraph.Edge;
 import data_structures.WeightedGraph.Node;
 
-public class DijkstraAlgorithm<V> {
+public class DijkstraAlgorithmForAdjacencyList<V> {
 
     private final List<Edge<V>> edges;
     private Set<Node<V>> settledNodes;
@@ -20,7 +20,7 @@ public class DijkstraAlgorithm<V> {
     private Map<Node<V>, Node<V>> predecessors;
     private Map<Node<V>, Integer> distance;
 
-    public DijkstraAlgorithm(List<Edge<V>> edges) {
+    public DijkstraAlgorithmForAdjacencyList(List<Edge<V>> edges) {
         this.edges = edges;
     }
 

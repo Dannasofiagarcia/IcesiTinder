@@ -1,6 +1,6 @@
 package ui;
 
-import java.util.LinkedList;
+import java.util.List;
 
 import data_structures.WeightedGraph.Graph;
 import data_structures.WeightedGraph.Node;
@@ -33,7 +33,7 @@ public class Main {
 
         miGrafo.addConnection(a.hashCode(), b.hashCode(), 3);
 
-        LinkedList<Node<User>> path = miGrafo.dijkstra(a.hashCode(), e.hashCode());
+        List<Node<User>> path = miGrafo.dijkstraForAdjaList(a.hashCode(), e.hashCode());
 
         for (Node<User> node : path) {
             System.out.println(node.getValue().userName);
