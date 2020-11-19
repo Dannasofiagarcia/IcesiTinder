@@ -7,8 +7,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import data_structures.DijkstraAlgorithm;
-
 public class Graph<V> {
 
 	private Map<Integer, Node<V>> adjList;
@@ -25,7 +23,7 @@ public class Graph<V> {
 		nodesAdjMatrix = new int[defaultNumNodes][defaultNumNodes];
 		for (int i = 0; i < nodesAdjMatrix.length; i++) {
 			for (int j = 0; j < nodesAdjMatrix[i].length; j++) {
-				nodesAdjMatrix[i][j] = Integer.MAX_VALUE;
+				nodesAdjMatrix[i][j] = 0;
 			}
 		}
 	}
@@ -79,8 +77,53 @@ public class Graph<V> {
 		return list;
 
 	}
+/* 
+	public List<Node<V>> dijkstraForAdjaMatrix(Integer hashCodeOrigin, Integer hashCodeDestination) {
 
-	public LinkedList<Node<V>> dijkstra(Integer hashCodeOrigin, Integer hashCodeDestination) {
+		int o = adjList.get(hashCodeOrigin).getIndexMatrix(), d = adjList.get(hashCodeOrigin).getIndexMatrix();
+
+		DijkstraAlgorithmForAdjacencyMatrix dijkstra = new DijkstraAlgorithmForAdjacencyMatrix();
+
+		int[][] newMatrix = new int[nodesAdjMatrix.length - 1][nodesAdjMatrix.length - 1];
+
+		for (int i = 0; i < newMatrix.length - 1; i++) {
+			for (int j = 0; j < newMatrix.length - 1; j++) {
+				newMatrix[i][j] = nodesAdjMatrix[i][j];
+			}
+		}
+		int[][] miGrafo = newMatrix;
+		for (int x = 0; x < miGrafo.length; x++) {
+			System.out.print("|");
+			for (int y = 0; y < miGrafo[x].length; y++) {
+				System.out.print(miGrafo[x][y]);
+				if (y != miGrafo[x].length - 1)
+					System.out.print("\t");
+			}
+			System.out.println("|");
+		}
+		dijkstra.dijkstra(newMatrix, o, d, numVertices);
+
+		List<Integer> pathWihtIndices = dijkstra.getShortesPath();
+		List<Node<V>> temporalNodes = new ArrayList<>();
+		temporalNodes.addAll(adjList.values());
+
+		List<Node<V>> shortestPath = new ArrayList<>();
+		System.out.println("tamaño temporales" + temporalNodes.size() + "  tamaño camino " + pathWihtIndices.size());
+
+		for (int i = 0; i < temporalNodes.size(); i++) {
+			for (int j = 0; j < pathWihtIndices.size(); j++) {
+				System.out.println("entrooo");
+
+				if (temporalNodes.get(i).getIndexMatrix() == (int) pathWihtIndices.get(j)) {
+					shortestPath.add(temporalNodes.get(i));
+				}
+			}
+		}
+		return shortestPath;
+
+	} */
+
+	public List<Node<V>> dijkstraForAdjaList(Integer hashCodeOrigin, Integer hashCodeDestination) {
 
 		List<Node<V>> nodes = new ArrayList<>(adjList.values());
 
@@ -92,11 +135,14 @@ public class Graph<V> {
 		}
 
 		@SuppressWarnings("rawtypes")
-		DijkstraAlgorithm<V> dijkstra = new DijkstraAlgorithm(edges);
+		DijkstraAlgorithmForAdjacencyList<V> dijkstra = new DijkstraAlgorithmForAdjacencyList(edges);
 
 		dijkstra.execute(adjList.get(hashCodeOrigin));
 
 		LinkedList<Node<V>> path = dijkstra.getPath(adjList.get(hashCodeDestination));
+
+		List<Node<V>> l = new ArrayList<>();
+		l.addAll(path);
 
 		return path;
 
@@ -123,7 +169,7 @@ public class Graph<V> {
 
 		int v = getNumVertices();
 		if (v >= nodesAdjMatrix.length) {
-			int[][] newNodesAdjMatrix = new int[v * 2][v * 2];
+			int[][] newNodesAdjMatrix = new int[v + 1][v + 1];
 			for (int i = 0; i < nodesAdjMatrix.length; i++) {
 				for (int j = 0; j < nodesAdjMatrix.length; j++) {
 					newNodesAdjMatrix[i][j] = nodesAdjMatrix[i][j];
@@ -133,14 +179,14 @@ public class Graph<V> {
 			nodesAdjMatrix = newNodesAdjMatrix;
 		}
 		for (int i = 0; i < nodesAdjMatrix[v].length; i++) {
-			nodesAdjMatrix[v][i] = Integer.MAX_VALUE;
-			nodesAdjMatrix[i][v] = Integer.MAX_VALUE;
+			nodesAdjMatrix[v][i] = 0;
+			nodesAdjMatrix[i][v] = 0;
 		}
 
 		for (int i = 0; i < nodesAdjMatrix.length; i++) {
 			for (int j = 0; j < nodesAdjMatrix[i].length; j++) {
 				if (nodesAdjMatrix[i][j] == 0) {
-					nodesAdjMatrix[i][j] = Integer.MAX_VALUE;
+					nodesAdjMatrix[i][j] = 0;
 				}
 			}
 		}
