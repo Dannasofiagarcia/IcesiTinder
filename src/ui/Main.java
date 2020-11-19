@@ -9,6 +9,7 @@ import model.User;
 public class Main {
 
     public static void main(String[] args) {
+
         Graph<User> miGrafo = new Graph<User>();
 
         User a = new User("andrea", "sabsajhds");
@@ -33,12 +34,21 @@ public class Main {
 
         miGrafo.addConnection(a.hashCode(), b.hashCode(), 3);
 
-        List<Node<User>> path = miGrafo.dijkstraForAdjaList(a.hashCode(), e.hashCode());
+        System.out.println("MEJOR RECORRIDO ANDREA - REYES /// MATRIZ\n");
+
+        List<Node<User>> path = miGrafo.dijkstraForAdjaMatrix(a.hashCode(), e.hashCode());
 
         for (Node<User> node : path) {
             System.out.println(node.getValue().userName);
         }
 
+        System.out.println("\n\nMEJOR RECORRIDO ANDREA - REYES /// LISTA\n");
+
+        path = miGrafo.dijkstraForAdjaList(a.hashCode(), e.hashCode());
+
+        for (Node<User> node : path) {
+            System.out.println(node.getValue().userName);
+        }
     }
 
 }

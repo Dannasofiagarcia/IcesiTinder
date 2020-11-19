@@ -20,12 +20,11 @@ public class Graph<V> {
 		adjList = new HashMap<Integer, Node<V>>();
 		numVertices = 0;
 		numEdges = 0;
-		nodesAdjMatrix = new int[defaultNumNodes][defaultNumNodes];
-		for (int i = 0; i < nodesAdjMatrix.length; i++) {
-			for (int j = 0; j < nodesAdjMatrix[i].length; j++) {
-				nodesAdjMatrix[i][j] = 0;
-			}
-		}
+		// nodesAdjMatrix = new int[defaultNumNodes][defaultNumNodes];
+		/*
+		 * for (int i = 0; i < nodesAdjMatrix.length; i++) { for (int j = 0; j <
+		 * nodesAdjMatrix[i].length; j++) { nodesAdjMatrix[i][j] = 0; } }
+		 */
 	}
 
 	public Map<Integer, Node<V>> getNodes() {
@@ -37,6 +36,10 @@ public class Graph<V> {
 	}
 
 	public void addNode(V value) {
+
+		if (nodesAdjMatrix == null)
+			nodesAdjMatrix = new int[numVertices][numVertices];
+
 		adjList.put(value.hashCode(), new Node<V>(value));
 
 		addNodeAdjMatrix();
@@ -77,7 +80,7 @@ public class Graph<V> {
 		return list;
 
 	}
-/* 
+
 	public List<Node<V>> dijkstraForAdjaMatrix(Integer hashCodeOrigin, Integer hashCodeDestination) {
 
 		int o = adjList.get(hashCodeOrigin).getIndexMatrix(), d = adjList.get(hashCodeOrigin).getIndexMatrix();
@@ -92,6 +95,8 @@ public class Graph<V> {
 			}
 		}
 		int[][] miGrafo = newMatrix;
+		miGrafo[2][4] = 3;
+		miGrafo[4][2] = 3;
 		for (int x = 0; x < miGrafo.length; x++) {
 			System.out.print("|");
 			for (int y = 0; y < miGrafo[x].length; y++) {
@@ -105,13 +110,17 @@ public class Graph<V> {
 
 		List<Integer> pathWihtIndices = dijkstra.getShortesPath();
 		List<Node<V>> temporalNodes = new ArrayList<>();
+
 		temporalNodes.addAll(adjList.values());
 
 		List<Node<V>> shortestPath = new ArrayList<>();
-		System.out.println("tamaño temporales" + temporalNodes.size() + "  tamaño camino " + pathWihtIndices.size());
+		// System.out.println("tamaño temporales" + temporalNodes.size() + " tamaño
+		// camino " + pathWihtIndices.size());
 
 		for (int i = 0; i < temporalNodes.size(); i++) {
-			for (int j = 0; j < pathWihtIndices.size(); j++) {
+			if (i == temporalNodes.size() - 1)
+				shortestPath = this.dijkstraForAdjaList(hashCodeOrigin, hashCodeDestination);
+			for (int j = pathWihtIndices.size(); j < pathWihtIndices.size(); j++) {
 				System.out.println("entrooo");
 
 				if (temporalNodes.get(i).getIndexMatrix() == (int) pathWihtIndices.get(j)) {
@@ -119,9 +128,10 @@ public class Graph<V> {
 				}
 			}
 		}
+
 		return shortestPath;
 
-	} */
+	}
 
 	public List<Node<V>> dijkstraForAdjaList(Integer hashCodeOrigin, Integer hashCodeDestination) {
 
@@ -165,6 +175,7 @@ public class Graph<V> {
 	}
 
 	public void addNodeAdjMatrix() {
+
 		numVertices++;
 
 		int v = getNumVertices();
@@ -190,7 +201,6 @@ public class Graph<V> {
 				}
 			}
 		}
-
 	}
 
 	public int distance[] = new int[numVertices];
