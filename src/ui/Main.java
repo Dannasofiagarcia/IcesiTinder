@@ -3,6 +3,7 @@ package ui;
 import java.util.List;
 
 import data_structures.WeightedGraph.Graph;
+import data_structures.WeightedGraph.Kruskal;
 import data_structures.WeightedGraph.Node;
 import model.User;
 
@@ -33,22 +34,10 @@ public class Main {
         miGrafo.addConnection(c.hashCode(), e.hashCode(), 3);
 
         miGrafo.addConnection(a.hashCode(), b.hashCode(), 3);
-
-        System.out.println("MEJOR RECORRIDO ANDREA - REYES /// MATRIZ\n");
-
-        List<Node<User>> path = miGrafo.dijkstraForAdjaMatrix(a.hashCode(), e.hashCode());
-
-        for (Node<User> node : path) {
-            System.out.println(node.getValue().userName);
-        }
-
-        System.out.println("\n\nMEJOR RECORRIDO ANDREA - REYES /// LISTA\n");
-
-        path = miGrafo.dijkstraForAdjaList(a.hashCode(), e.hashCode());
-
-        for (Node<User> node : path) {
-            System.out.println(node.getValue().userName);
-        }
+        
+        Kruskal myKruskal = new Kruskal();
+      
+        System.out.println(myKruskal.kruskalMST(miGrafo.adjMatrix));
     }
 
 }
