@@ -1,4 +1,4 @@
-package data_structures.WeightedGraph;
+apackage data_structures.WeightedGraph;
 
 import model.User;
 import org.junit.jupiter.api.Test;
