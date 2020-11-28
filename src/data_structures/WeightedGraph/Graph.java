@@ -80,9 +80,21 @@ public class Graph<V> {
 	}
 
 	public List<Node<V>> dijkstraForAdjaMatrix(Integer hashCodeOrigin, Integer hashCodeDestination) {
-		// hajhsnkjsankjdsnkjsdnjkdss
-		return null;
-
+		DijkstraAlgorithmForAdjacencyMatrix myDijkstra = new DijkstraAlgorithmForAdjacencyMatrix();
+		myDijkstra.dijkstra(adjMatrix, adjList.get(hashCodeOrigin).getIndexMatrix(), adjList.get(hashCodeDestination).getIndexMatrix(), nV);
+		List<Integer> myIndex = myDijkstra.getShortesPath();
+		List<Node<V>> temp = new ArrayList<>();
+		temp.addAll(adjList.values());
+		List<Node<V>> path = new ArrayList<>();
+		for(int i = 0; i < myIndex.size();i++){
+			for(int j = 0; j < temp.size(); j++){
+				if(temp.get(j).getIndexMatrix() == myIndex.get(i)){
+					path.add(temp.get(j));
+					j = temp.size();
+				}
+			}
+		}
+		return path;
 	}
 
 	public List<Node<V>> dijkstraForAdjaList(Integer hashCodeOrigin, Integer hashCodeDestination) {

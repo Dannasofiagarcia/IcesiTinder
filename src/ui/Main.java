@@ -49,6 +49,11 @@ public class Main {
         Kruskal myKruskal = new Kruskal();
       
         System.out.println(myKruskal.kruskalMST(miGrafo.adjMatrix));
+
+        for (Node<User> nodo: miGrafo.dijkstraForAdjaMatrix(a.hashCode(), e.hashCode())
+             ) {
+            System.out.println(nodo.getValue().userName);
+        }
     }
 
 }
