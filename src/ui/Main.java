@@ -5,6 +5,7 @@ import java.util.List;
 import data_structures.WeightedGraph.Graph;
 import data_structures.WeightedGraph.Kruskal;
 import data_structures.WeightedGraph.Node;
+import data_structures.WeightedGraph.Prim;
 import model.User;
 
 public class Main {
@@ -50,6 +51,9 @@ public class Main {
       
         System.out.println(myKruskal.kruskalMST(miGrafo.adjMatrix));
 
+        Prim p = new Prim();
+        p.primMST(miGrafo.adjMatrix);
+        System.out.println(p.mincost);
         for (Node<User> nodo: miGrafo.dijkstraForAdjaMatrix(a.hashCode(), e.hashCode())
              ) {
             System.out.println(nodo.getValue().userName);
