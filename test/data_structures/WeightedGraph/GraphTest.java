@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GraphTest {
@@ -117,5 +119,50 @@ public class GraphTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void addNodeTest1() {
+    	setUp1();
+    	User aux = new User("aristi", "profe de andrea");
+    	miGrafo.addNode(aux);
+    	assertEquals(aux.hashCode(), miGrafo.getNodes().get(aux.hashCode()).getValue().hashCode());
+    }
+    
+    @Test
+    void addNodeTest2() {
+     	setUp1();
+    	User aux = new User("lordPiedrahita666", "director de Hogwarts");
+    	miGrafo.addNode(aux);
+    	assertEquals(aux.hashCode(), miGrafo.getNodes().get(aux.hashCode()).getValue().hashCode());
+    }
+    
+    @Test
+    void deleteNodeTest1() {
+    	setUp1();
+        assertTrue(miGrafo.removeNode(a.hashCode()));
+    }
+    
+    @Test
+    void deleteNodeTest2() {
+    	setUp1();
+        assertTrue(miGrafo.removeNode(b.hashCode()));
+    }
+    
+    @Test
+    void searchNodeTest1() {
+    	setUp1();
+    	assertEquals(a, miGrafo.searchNode(a.hashCode()).getValue());
+    }
+    
+    @Test
+    void searchNodeTest2() {
+    	setUp1();
+    	assertEquals(b, miGrafo.searchNode(b.hashCode()).getValue());
+    }
 
+    @Test
+    void searchNodeTest3() {
+    	setUp1();
+    	assertNull(miGrafo.searchNode(123));
+    }
+    
 }

@@ -81,14 +81,15 @@ public class Graph<V> {
 
 	public List<Node<V>> dijkstraForAdjaMatrix(Integer hashCodeOrigin, Integer hashCodeDestination) {
 		DijkstraAlgorithmForAdjacencyMatrix myDijkstra = new DijkstraAlgorithmForAdjacencyMatrix();
-		myDijkstra.dijkstra(adjMatrix, adjList.get(hashCodeOrigin).getIndexMatrix(), adjList.get(hashCodeDestination).getIndexMatrix(), nV);
+		myDijkstra.dijkstra(adjMatrix, adjList.get(hashCodeOrigin).getIndexMatrix(),
+				adjList.get(hashCodeDestination).getIndexMatrix(), nV);
 		List<Integer> myIndex = myDijkstra.getShortesPath();
 		List<Node<V>> temp = new ArrayList<>();
 		temp.addAll(adjList.values());
 		List<Node<V>> path = new ArrayList<>();
-		for(int i = 0; i < myIndex.size();i++){
-			for(int j = 0; j < temp.size(); j++){
-				if(temp.get(j).getIndexMatrix() == myIndex.get(i)){
+		for (int i = 0; i < myIndex.size(); i++) {
+			for (int j = 0; j < temp.size(); j++) {
+				if (temp.get(j).getIndexMatrix() == myIndex.get(i)) {
 					path.add(temp.get(j));
 					j = temp.size();
 				}
@@ -128,6 +129,24 @@ public class Graph<V> {
 
 	public void setNumEdges(int numEdges) {
 		this.numEdges = numEdges;
+	}
+
+	public boolean removeNode(Integer hashCode) {
+		boolean aux = false;
+		Node<V> tmp = adjList.remove(hashCode);
+		if (tmp == null) {
+			return aux;
+		} else {
+			for (int i = 0; i < adjMatrix.length; i++) {
+				adjMatrix[i][tmp.getIndexMatrix()] = 0;
+				adjMatrix[tmp.getIndexMatrix()][i] = 0;
+			}
+			return !aux;
+		}
+	}
+
+	public Node<V> searchNode(Integer hashCode) {
+		return adjList.get(hashCode);
 	}
 
 }
