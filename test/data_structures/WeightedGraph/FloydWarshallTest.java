@@ -47,7 +47,7 @@ private static FloydWarshall myFlow = new FloydWarshall();
 	}
 	
 	@Test
-	void floydWaeshallMSTTest2() {
+	void floydWarshallMSTTest2() {
 		setUp1();
 		list = new ArrayList<>();
 		int[] aux = new int[] {4, 2, 5, 6, 7, 2, 4, 3, 8, 5, 5, 3, 6, 11, 7, 6, 8, 11, 12, 9, 7, 5, 7, 9, 10};
