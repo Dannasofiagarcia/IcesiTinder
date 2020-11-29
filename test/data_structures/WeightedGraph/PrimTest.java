@@ -1,3 +1,5 @@
+package data_structures.WeightedGraph;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
@@ -30,21 +32,19 @@ class PrimTest {
 		    {3,	0,	2,	0,	0},
 		    {0, 0,	3,	0,	0},
 	    };
-	    
-	    
 	}
 	
 	@Test
-	void kruskalMSTTest1() {
+	void primMSTTest1() {
 		setUp1();
-		myPrim.primMST(cost)
-		assertEquals(16, myPrim.mincost );
+		myPrim.primMST(cost);
+		assertEquals(16, myPrim.mincost);
 	}
 	
 	@Test
-	void kruskalMSTTest2() {
+	void primMSTTest2() {
 		setUp2();
-		myPrim.primMST(cost)
-		assertEquals(11, myPrim.mincost);
+		myPrim.primMST(cost);
+		assertEquals(27, myPrim.mincost);
 	}
 }
