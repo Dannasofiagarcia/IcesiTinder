@@ -12,15 +12,16 @@ public class Node<V> {
     private boolean visited;
 
     private int indexMatrix;
+
     public int getIndexMatrix() {
-		return indexMatrix;
-	}
+        return indexMatrix;
+    }
 
-	public void setIndexMatrix(int indexMatrix) {
-		this.indexMatrix = indexMatrix;
-	}
+    public void setIndexMatrix(int indexMatrix) {
+        this.indexMatrix = indexMatrix;
+    }
 
-	public Node(V value) {
+    public Node(V value) {
         this.value = value;
         edges = new ArrayList<Edge<V>>();
     }
