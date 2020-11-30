@@ -7,12 +7,17 @@ import data_structures.WeightedGraph.Graph;
 import data_structures.WeightedGraph.Kruskal;
 import data_structures.WeightedGraph.Node;
 import data_structures.WeightedGraph.Prim;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import model.User;
 
-public class Main {
+public class Main extends Application {
 
 	public static void main(String[] args) {
-
+/* 
 		Graph<User> miGrafo = new Graph<User>();
 
 		User a = new User("andrea", "sabsajhds");
@@ -50,21 +55,37 @@ public class Main {
 		}
 
 		FloydWarshall flow = new FloydWarshall();
-		Kruskal myKruskal = new Kruskal();
+		Kruskal myKruskal = new Kruskal(); */
 
-//        System.out.println(myKruskal.kruskalMST(miGrafo.adjMatrix));
-//        System.out.println();
-		List<Integer> list = flow.floydWarshall(matriz);
+		// System.out.println(myKruskal.kruskalMST(miGrafo.adjMatrix));
+		// System.out.println();
+	/* 	List<Integer> list = flow.floydWarshall(matriz);
 
 		System.out.println(list.toString());
+ */
+		// Prim p = new Prim();
+		// p.primMST(miGrafo.adjMatrix);
+		// System.out.println(p.mincost);
+		// for (Node<User> nodo: miGrafo.dijkstraForAdjaMatrix(a.hashCode(),
+		// e.hashCode())
+		// ) {
+		// System.out.println(nodo.getValue().userName);
+		// }
 
-//        Prim p = new Prim();
-//        p.primMST(miGrafo.adjMatrix);
-//        System.out.println(p.mincost);
-//        for (Node<User> nodo: miGrafo.dijkstraForAdjaMatrix(a.hashCode(), e.hashCode())
-//             ) {
-//            System.out.println(nodo.getValue().userName);
-//        }
+		launch(args);
+	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
+
+		fxmlLoader.setController(new MainController());
+		Parent root = fxmlLoader.load();
+
+		Scene scene = new Scene(root);
+		primaryStage.setScene(scene);
+		primaryStage.setTitle("Quick");
+		primaryStage.show();
 	}
 
 }
