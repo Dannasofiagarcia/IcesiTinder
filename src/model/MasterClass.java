@@ -1,10 +1,17 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
 
 import data_structures.WeightedGraph.Graph;
 
 public class MasterClass {
+
+    public final static String[] FACULTIES = { "Ingenieria", "Ciencias Administrativas y Economicas",
+            "Ciencias de la Salud", "Derecho", "Ciencias Sociales", "Ciencias Naturales",
+            "Escuela de Ciencias de la Educación" };
 
     private Graph<User> db;
 
@@ -18,9 +25,33 @@ public class MasterClass {
 
         auxDb = new HashMap<String, User>();
 
+        User a = new User("andrea", "pinina", "Andrea Nuñez", FACULTIES[0], "andrea.nr2000@gmail.com", 'f', 1);
+        User b = new User("danna", "cloe", "Danna Garcia", FACULTIES[0], "dannita123@yahoo.com", 'f', 1);
+        User c = new User("escobar", "chumby", "Camilo Escobar", FACULTIES[0], "escobarelpatrondelmal@yahoo.com", 'm',
+                1);
+        User d = new User("cordoba", "theBestPassword", "Camilo Cordoba", FACULTIES[0], "kamneklogs@gmail.com", 'm', 1);
+        User e = new User("reyes", "theBestProgrammer", "Juan Manuel Reyes", FACULTIES[0], "seyerman@gmail.com", 'm',
+                1);
+
+        db.addNode(a);
+        db.addNode(b);
+        db.addNode(c);
+        db.addNode(d);
+        db.addNode(e);
+
+        db.addConnection(a.hashCode(), d.hashCode(), 3);
+
+        db.addConnection(a.hashCode(), c.hashCode(), 1);
+
+        db.addConnection(d.hashCode(), c.hashCode(), 2);
+
+        db.addConnection(c.hashCode(), e.hashCode(), 3);
+
+        db.addConnection(a.hashCode(), b.hashCode(), 3);
+
     }
 
-    public boolean createUser(String userName, String password, String name, String faculty, String email, char gender,
+    public boolean signUp(String userName, String password, String name, String faculty, String email, char gender,
             char preferenceGender) {
 
         if (auxDb.get(userName) == null) {
@@ -59,6 +90,27 @@ public class MasterClass {
         }
 
         return false;
+
+    }
+
+    public User getRandomUser() {
+
+        List<User> tempUsers = new ArrayList<>();
+        tempUsers.addAll(auxDb.values());
+        int iName = (int) (Math.random() * (double) tempUsers.size());
+
+        return tempUsers.get(iName);
+
+    }
+
+    public boolean doMatch(String userName, int conectionForce) {
+        User temp = auxDb.get(userName);
+        db.addConnection(currentUser.hashCode(), temp.hashCode(), conectionForce);
+        return true;
+    }
+
+    public List<User> getBestSocialPath(String userName) {
+        return null;
     }
 
 }

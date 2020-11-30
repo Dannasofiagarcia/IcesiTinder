@@ -4,7 +4,11 @@ public class User {
 
     private String userName, password, name, faculty, email;
 
-    private char gender, preferenceGender;
+    private char gender;
+
+    // 0. Homo
+    // 1. Hetero
+    private int sexualOrientation;
 
     private boolean status;
 
@@ -34,14 +38,14 @@ public class User {
     }
 
     public User(String userName, String password, String name, String faculty, String email, char gender,
-            char preferenceGender) {
+            int sexualOrientation) {
         this.userName = userName;
         this.password = password;
         this.name = name;
         this.faculty = faculty;
         this.email = email;
         this.gender = gender;
-        this.preferenceGender = preferenceGender;
+        this.sexualOrientation = sexualOrientation;
         status = true;
     }
 
@@ -93,14 +97,6 @@ public class User {
         this.gender = gender;
     }
 
-    public char getPreferenceGender() {
-        return preferenceGender;
-    }
-
-    public void setPreferenceGender(char preferenceGender) {
-        this.preferenceGender = preferenceGender;
-    }
-
     public void setStatusAccount(boolean b) {
         status = b;
     }
@@ -111,6 +107,14 @@ public class User {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public int getSexualOrientation() {
+        return sexualOrientation;
+    }
+
+    public void setSexualOrientation(int sexualOrientation) {
+        this.sexualOrientation = sexualOrientation;
     }
 
 }
