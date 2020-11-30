@@ -2,7 +2,8 @@ package model;
 
 public class User {
 
-    private String userName, password, name, faculty, email;
+    private String name, faculty, email;
+    private final String userName, password;
 
     private char gender;
 
@@ -53,16 +54,8 @@ public class User {
         return userName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getName() {

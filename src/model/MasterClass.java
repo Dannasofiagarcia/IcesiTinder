@@ -19,11 +19,16 @@ public class MasterClass {
 
     private User currentUser;
 
+    // True = adjList --- False = adjMatrix;
+    private boolean dataStructureType;
+
     public MasterClass() {
 
         db = new Graph<User>();
 
         auxDb = new HashMap<String, User>();
+
+        dataStructureType = true;
 
         User a = new User("andrea", "pinina", "Andrea Nuñez", FACULTIES[0], "andrea.nr2000@gmail.com", 'f', 1);
         User b = new User("danna", "cloe", "Danna Garcia", FACULTIES[0], "dannita123@yahoo.com", 'f', 1);
@@ -104,13 +109,26 @@ public class MasterClass {
     }
 
     public boolean doMatch(String userName, int conectionForce) {
+
         User temp = auxDb.get(userName);
         db.addConnection(currentUser.hashCode(), temp.hashCode(), conectionForce);
+
         return true;
+        
     }
 
     public List<User> getBestSocialPath(String userName) {
-        return null;
+
+        if (dataStructureType) {
+
+            return db.dijkstraForAdjaList(currentUser.hashCode(), auxDb.get(userName).hashCode());
+
+        }
+
+        return db.dijkstraForAdjaMatrix(currentUser.hashCode(), auxDb.get(userName).hashCode());
+
     }
+
+
 
 }

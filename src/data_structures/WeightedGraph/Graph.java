@@ -79,7 +79,7 @@ public class Graph<V> {
 
 	}
 
-	public List<Node<V>> dijkstraForAdjaMatrix(Integer hashCodeOrigin, Integer hashCodeDestination) {
+	public List<V> dijkstraForAdjaMatrix(Integer hashCodeOrigin, Integer hashCodeDestination) {
 		DijkstraAlgorithmForAdjacencyMatrix myDijkstra = new DijkstraAlgorithmForAdjacencyMatrix();
 		myDijkstra.dijkstra(adjMatrix, adjList.get(hashCodeOrigin).getIndexMatrix(),
 				adjList.get(hashCodeDestination).getIndexMatrix(), nV);
@@ -95,10 +95,16 @@ public class Graph<V> {
 				}
 			}
 		}
-		return path;
+		List<V> valuesPath = new ArrayList<V>();
+
+		for (int i = 0; i < path.size(); i++) {
+			valuesPath.add(path.get(i).getValue());
+		}
+
+		return valuesPath;
 	}
 
-	public List<Node<V>> dijkstraForAdjaList(Integer hashCodeOrigin, Integer hashCodeDestination) {
+	public List<V> dijkstraForAdjaList(Integer hashCodeOrigin, Integer hashCodeDestination) {
 
 		List<Node<V>> nodes = new ArrayList<>(adjList.values());
 
@@ -119,7 +125,13 @@ public class Graph<V> {
 		List<Node<V>> l = new ArrayList<>();
 		l.addAll(path);
 
-		return path;
+		List<V> valuesPath = new ArrayList<V>();
+
+		for (int i = 0; i < path.size(); i++) {
+			valuesPath.add(path.get(i).getValue());
+		}
+
+		return valuesPath;
 
 	}
 
