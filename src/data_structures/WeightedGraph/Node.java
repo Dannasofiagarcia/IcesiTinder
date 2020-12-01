@@ -83,6 +83,20 @@ public class Node<V> {
 
     }
 
+    public List<Node<V>> getAdjNodes() {
+
+        List<Node<V>> aN = new ArrayList<Node<V>>();
+
+        for (int i = 0; i < edges.size(); i++) {
+
+            aN.add(edges.get(i).getDestination());
+
+        }
+
+        return aN;
+
+    }
+
     public boolean isVisited() {
         return visited;
     }
