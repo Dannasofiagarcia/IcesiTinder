@@ -2,5 +2,4 @@
 
 <?import javafx.scene.layout.Pane?>
 
-
 <Pane prefHeight="512.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" />

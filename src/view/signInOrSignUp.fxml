@@ -8,12 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2ba9df;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="762.0" style="-fx-background-color: #2ba9df;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="375.0" fitWidth="370.0" layoutX="14.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../view/elementos-infographic-sociales-de-la-comunicación-global-del-concepto-de-la-red-47009434.jpg" />
+            <Image url="@../../../Tarea%20integradora%203/elementos-infographic-sociales-de-la-comunicación-global-del-concepto-de-la-red-47009434.jpg" />
          </image>
       </ImageView>
       <Label layoutX="404.0" layoutY="28.0" prefHeight="42.0" prefWidth="136.0" text="Tinder Icesi">
@@ -27,7 +26,7 @@
       <TextField fx:id="password" layoutX="407.0" layoutY="177.0" />
       <Button layoutX="454.0" layoutY="218.0" mnemonicParsing="false" onAction="#singInUser" text="Ingresar" />
       <Label layoutX="408.0" layoutY="286.0" prefHeight="25.0" prefWidth="128.0" text="¿Ya te registrate?" textAlignment="RIGHT" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" />
-      <Button layoutX="452.0" layoutY="334.0" mnemonicParsing="false" onAction="#signUpUser" text="Sign Up" />
+      <Button layoutX="434.0" layoutY="337.0" mnemonicParsing="false" onAction="#signUpUser" text="Registrarme" />
       <Label layoutX="405.0" layoutY="311.0" prefHeight="17.0" prefWidth="157.0" text="¿Que esperas para hacerlo?" wrapText="true" />
    </children>
 </AnchorPane>

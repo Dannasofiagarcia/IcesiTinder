@@ -84,7 +84,7 @@ public class Main extends Application {
 
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("Quick");
+		primaryStage.setTitle("IcesiTinder V0.1");
 		primaryStage.show();
 	}
 
