@@ -13,12 +13,12 @@ public class SignController {
 	private TextField password;
 
 	@FXML
-	void signUpUser(ActionEvent event) {
+	public void signUpUser(ActionEvent event) {
 
 	}
 
 	@FXML
-	void singInUser(ActionEvent event) {
+	public void singInUser(ActionEvent event) {
 
 	}
 
