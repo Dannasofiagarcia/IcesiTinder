@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import model.MasterClass;
 
 public class AddNewUserController {
 
@@ -18,12 +19,15 @@ public class AddNewUserController {
 
     @FXML
     private TextField faculty;
-    
+
     @FXML
     Pane MainPane;
 
-    public AddNewUserController(Pane mainPane) {
+    private MasterClass mc;
+
+    public AddNewUserController(Pane mainPane, MasterClass mc) {
         MainPane = mainPane;
+        this.mc = mc;
     }
 
     @FXML

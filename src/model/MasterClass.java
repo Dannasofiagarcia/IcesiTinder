@@ -3,7 +3,6 @@ package model;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Random;
 
 import data_structures.WeightedGraph.Graph;
 
@@ -43,6 +42,12 @@ public class MasterClass {
         db.addNode(c);
         db.addNode(d);
         db.addNode(e);
+
+        auxDb.put(a.getUserName(), a);
+        auxDb.put(b.getUserName(), b);
+        auxDb.put(c.getUserName(), c);
+        auxDb.put(d.getUserName(), d);
+        auxDb.put(e.getUserName(), e);
 
         db.addConnection(a.hashCode(), d.hashCode(), 3);
 
@@ -88,6 +93,10 @@ public class MasterClass {
     }
 
     public boolean signIn(String userName, String password) {
+
+        if (auxDb.get(userName) == null) {
+            return false;
+        }
         if (auxDb.get(userName).getPassword().equals(password)) {
 
             currentUser = db.searchNode(auxDb.get(userName).hashCode()).getValue();
@@ -137,6 +146,10 @@ public class MasterClass {
 
         return db.dijkstraForAdjaMatrix(currentUser.hashCode(), auxDb.get(userName).hashCode());
 
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
     }
 
 }
