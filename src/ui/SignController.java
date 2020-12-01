@@ -31,7 +31,7 @@ public class SignController {
 
 	public SignController(Pane mainPane, MasterClass mc, MainController mainController) {
 		MainPane = mainPane;
-		addN = new AddNewUserController(MainPane, mc);
+		addN = new AddNewUserController(MainPane, mc, mainController);
 		this.mc = mc;
 		this.mainController = mainController;
 	}

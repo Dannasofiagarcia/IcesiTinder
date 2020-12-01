@@ -35,13 +35,14 @@ public class MainController {
     @FXML
     void signUp(ActionEvent event) throws IOException {
 
-        addNU = new AddNewUserController(MainPane, mc);
+        addNU = new AddNewUserController(MainPane, mc, this);
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/addNewUser.fxml"));
         fxmlLoader.setController(addNU);
         Parent signUp = fxmlLoader.load();
         MainPane.getChildren().clear();
         MainPane.getChildren().add(signUp);
+        
     }
 
 }

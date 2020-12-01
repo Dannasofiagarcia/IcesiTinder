@@ -9,8 +9,7 @@ import data_structures.WeightedGraph.Graph;
 public class MasterClass {
 
     public final static String[] FACULTIES = { "Ingenieria", "Ciencias Administrativas y Economicas",
-            "Ciencias de la Salud", "Derecho", "Ciencias Sociales", "Ciencias Naturales",
-            "Escuela de Ciencias de la Educación" };
+            "Ciencias de la Salud", "Derecho", "Ciencias Naturales", "Ciencias de la Educación" };
 
     private Graph<User> db;
 
@@ -62,7 +61,7 @@ public class MasterClass {
     }
 
     public boolean signUp(String userName, String password, String name, String faculty, String email, char gender,
-            char preferenceGender) {
+            int preferenceGender) {
 
         if (auxDb.get(userName) == null) {
 

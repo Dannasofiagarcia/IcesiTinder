@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -19,57 +21,74 @@
             <Image url="@llama%20500.png" />
          </image>
       </ImageView>
-      <Label layoutX="304.0" layoutY="73.0" text="Nombre de usuario">
+      <Label layoutX="440.0" layoutY="320.0" text="Orientacion sexual">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="314.0" layoutY="210.0" text="Correo electrónico">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
-      <Label layoutX="322.0" layoutY="355.0" text="Orientacion sexual">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
-      <Label layoutX="315.0" layoutY="140.0" prefHeight="27.0" prefWidth="160.0" text="Nombre completo">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
-      <Label layoutX="359.0" layoutY="279.0" text="Facultad ">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
-      <TextField fx:id="nameUser" layoutX="266.0" layoutY="106.0" prefHeight="25.0" prefWidth="258.0" promptText="nombreEjemplo" />
-      <TextField fx:id="hotmail" layoutX="266.0" layoutY="243.0" prefHeight="25.0" prefWidth="258.0" promptText="ejemplo@hotmail.com" />
-      <TextField fx:id="fullName" layoutX="266.0" layoutY="174.0" prefHeight="25.0" prefWidth="258.0" promptText="Nombre Apellido" />
-      <RadioButton layoutX="266.0" layoutY="395.0" mnemonicParsing="false" text="Hetero">
-         <font>
-            <Font size="18.0" />
-         </font></RadioButton>
-      <RadioButton layoutX="395.0" layoutY="395.0" mnemonicParsing="false" text="Homosexual">
-         <font>
-            <Font size="18.0" />
-         </font></RadioButton>
-      <Button layoutX="346.0" layoutY="444.0" mnemonicParsing="false" onAction="#DeleterUserData" text="Registrarse">
+      <TextField fx:id="nameUser" layoutX="266.0" layoutY="108.0" prefHeight="25.0" prefWidth="258.0" promptText="Nombre de usuario (unico)" />
+      <TextField fx:id="emailTF" layoutX="422.0" layoutY="150.0" prefHeight="25.0" prefWidth="258.0" promptText="Correo" />
+      <TextField fx:id="fullNameTF" layoutX="160.0" layoutY="150.0" prefHeight="26.0" prefWidth="241.0" promptText="Nombre completo" />
+      <RadioButton fx:id="heteroRButton" layoutX="441.0" layoutY="359.0" mnemonicParsing="false" text="Hetero">
          <font>
             <Font size="16.0" />
-         </font></Button>
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="sexualOrientation" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="homoRButton" layoutX="551.0" layoutY="359.0" mnemonicParsing="false" text="Homo" toggleGroup="$sexualOrientation">
+         <font>
+            <Font size="16.0" />
+         </font></RadioButton>
       <Label layoutX="255.0" layoutY="-6.0" prefHeight="85.0" prefWidth="284.0" text="REGISTRO" textFill="#ffa44f">
          <font>
             <Font name="System Bold" size="58.0" />
          </font>
       </Label>
-      <MenuButton fx:id="faculty" layoutX="319.0" layoutY="314.0" mnemonicParsing="false" text="Opciones facultades">
+      <MenuButton fx:id="faculty" layoutX="462.0" layoutY="269.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="15.0">
         <items>
-          <MenuItem fx:id="engineering" mnemonicParsing="false" text="Ingeniería" />
-          <MenuItem mnemonicParsing="false" text="Ciencias administrativas" />
-            <MenuItem mnemonicParsing="false" text="Derecho" />
-            <MenuItem mnemonicParsing="false" text="Médicina" />
+          <MenuItem fx:id="ingenieriaMI" mnemonicParsing="false" text="Ingeniería" />
+          <MenuItem fx:id="cieciasAdminMI" mnemonicParsing="false" text="Ciencias administrativas" />
+            <MenuItem fx:id="derechoMI" mnemonicParsing="false" text="Derecho" />
+            <MenuItem fx:id="cienciasNatMI" mnemonicParsing="false" text="Ciencias Naturales" />
+            <MenuItem fx:id="cienciasEduMI" mnemonicParsing="false" text="Ciencias de la Educación" />
+            <MenuItem fx:id="cienciasSaludMI" mnemonicParsing="false" text="Ciencias de la Salud" />
         </items>
          <font>
             <Font size="13.0" />
          </font>
       </MenuButton>
+      <Label layoutX="391.0" layoutY="444.0" text="o" />
+      <Label fx:id="statusUserName" layoutX="551.0" layoutY="111.0" />
+      <PasswordField fx:id="passwordTF" layoutX="306.0" layoutY="217.0" promptText="Contraseña" />
+      <TextField fx:id="facultySelected" editable="false" layoutX="295.0" layoutY="269.0" promptText="Seleccione su facultad" />
+      <Hyperlink layoutX="321.0" layoutY="404.0" onAction="#confirmSignUp" text="Registrarme">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink layoutX="330.0" layoutY="460.0" onAction="#signIn" text="Iniciar sesion">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Hyperlink>
+      <Label layoutX="215.0" layoutY="320.0" text="Genero">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="hombreRB" layoutX="169.0" layoutY="359.0" mnemonicParsing="false" text="Hombre">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="generoTB" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="mujerRB" layoutX="273.0" layoutY="359.0" mnemonicParsing="false" text="Mujer" toggleGroup="$generoTB">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </RadioButton>
    </children>
    <effect>
       <ColorAdjust />
