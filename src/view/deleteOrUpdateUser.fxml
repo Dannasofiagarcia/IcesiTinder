@@ -27,7 +27,7 @@
       <Button layoutX="227.0" layoutY="322.0" mnemonicParsing="false" onAction="#DeleterUserData" text="Eliminar Usuario" />
       <ImageView fitHeight="275.0" fitWidth="329.0" layoutX="243.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Tarea%20integradora%203/improve-user-experience.jpg" />
+            <Image url="@improve-user-experience.jpg" />
          </image>
       </ImageView>
    </children>

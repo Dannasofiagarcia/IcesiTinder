@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="375.0" fitWidth="370.0" layoutX="14.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Tarea%20integradora%203/elementos-infographic-sociales-de-la-comunicación-global-del-concepto-de-la-red-47009434.jpg" />
+            <Image url="@../view/elementos-infographic-sociales-de-la-comunicación-global-del-concepto-de-la-red-47009434.jpg" />
          </image>
       </ImageView>
       <Label layoutX="404.0" layoutY="28.0" prefHeight="42.0" prefWidth="136.0" text="Tinder Icesi">

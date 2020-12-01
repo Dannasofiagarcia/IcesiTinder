@@ -25,7 +25,7 @@
       <Button layoutX="405.0" layoutY="257.0" mnemonicParsing="false" onAction="#DeleterUserData" text="Registrarme xd" />
       <ImageView fitHeight="206.0" fitWidth="308.0" layoutX="37.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Tarea%20integradora%203/aajajaj.png" />
+            <Image url="@aajajaj.png" />
          </image>
       </ImageView>
    </children>
