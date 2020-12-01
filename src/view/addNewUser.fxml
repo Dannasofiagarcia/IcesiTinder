@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2ba9df;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="31.0" layoutY="36.0" text="Nombre del Usuario" />
+      <Label layoutX="237.0" layoutY="70.0" text="Correo Electronico" />
+      <Label layoutX="405.0" layoutY="127.0" text="Orientacion sexual" />
+      <Label layoutX="31.0" layoutY="106.0" text="Nombre Completo" />
+      <Label layoutX="405.0" layoutY="36.0" text="Facultad " />
+      <TextField fx:id="nameUser" layoutX="31.0" layoutY="53.0" promptText="PepitoElMejor" />
+      <TextField fx:id="hotmail" layoutX="226.0" layoutY="87.0" prefHeight="25.0" prefWidth="160.0" promptText="piedradita6666@gmail.com" />
+      <TextField fx:id="fullName" layoutX="31.0" layoutY="123.0" promptText="Francisco Piedrahita" />
+      <TextField fx:id="faculty" layoutX="404.0" layoutY="53.0" promptText="Ingeniería" />
+      <RadioButton layoutX="411.0" layoutY="148.0" mnemonicParsing="false" text="Hetero" />
+      <RadioButton layoutX="410.0" layoutY="165.0" mnemonicParsing="false" text="Homoxesual" />
+      <Button layoutX="405.0" layoutY="257.0" mnemonicParsing="false" onAction="#DeleterUserData" text="Registrarme xd" />
+      <ImageView fitHeight="206.0" fitWidth="308.0" layoutX="37.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Tarea%20integradora%203/aajajaj.png" />
+         </image>
+      </ImageView>
+   </children>
+   <effect>
+      <ColorAdjust />
+   </effect>
+</AnchorPane>
