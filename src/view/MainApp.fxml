@@ -16,7 +16,7 @@
             <Image url="@Humaaans%20-%203%20Characters.png" />
          </image>
       </ImageView>
-      <Label fx:id="nameLogged" layoutX="507.0" layoutY="11.0" prefHeight="18.0" prefWidth="130.0" text="UserName">
+      <Label fx:id="nameLogged" layoutX="483.0" layoutY="11.0" prefHeight="18.0" prefWidth="130.0" text="UserName">
          <font>
             <Font size="19.0" />
          </font></Label>
@@ -24,23 +24,15 @@
          <font>
             <Font size="19.0" />
          </font></Hyperlink>
-      <Button layoutX="132.0" layoutY="274.0" mnemonicParsing="false" style="-fx-background-color: 0000;" />
+      <Button layoutX="526.0" layoutY="299.0" mnemonicParsing="false" onAction="#testing" prefHeight="143.0" prefWidth="147.0" style="-fx-background-color: 0000;">
+         <graphic>
+            <ImageView fitHeight="142.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@libro.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
       <Separator layoutY="49.0" prefHeight="0.0" prefWidth="762.0" />
-      <ImageView fitHeight="142.0" fitWidth="132.0" layoutX="110.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@como.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="142.0" fitWidth="132.0" layoutX="315.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@red.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="142.0" fitWidth="132.0" layoutX="526.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@libro.png" />
-         </image>
-      </ImageView>
       <Label layoutX="128.0" layoutY="448.0" text="Buscar usuario">
          <font>
             <Font size="15.0" />
@@ -56,10 +48,28 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <ImageView fitHeight="35.0" fitWidth="38.0" layoutX="448.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="35.0" fitWidth="38.0" layoutX="428.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@usuario.png" />
          </image>
       </ImageView>
+      <Button layoutX="102.0" layoutY="294.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="147.0" style="-fx-background-color: 0000;">
+         <graphic>
+            <ImageView fitHeight="142.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@como.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="309.0" layoutY="299.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="147.0" style="-fx-background-color: 0000;">
+         <graphic>
+            <ImageView fitHeight="142.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@red.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </Pane>
