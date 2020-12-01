@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -10,14 +12,24 @@
   <children>
       <Pane fx:id="MainPane" prefHeight="512.0" prefWidth="762.0">
          <children>
-            <Hyperlink layoutX="530.0" layoutY="27.0" onAction="#signIn" text="Iniciar sesion" />
-            <Hyperlink layoutX="644.0" layoutY="27.0" onAction="#signUp" text="Registrarme" />
-            <Label layoutX="29.0" layoutY="155.0" text="ICESI TINDER">
+            <ImageView fitHeight="479.0" fitWidth="653.0" layoutX="38.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Humaaans%20-%203%20Characters%20(2).png" />
+               </image>
+            </ImageView>
+            <Hyperlink layoutX="512.0" layoutY="35.0" onAction="#signIn" prefHeight="40.0" prefWidth="127.0" text="Iniciar sesion">
                <font>
-                  <Font name="System Bold" size="70.0" />
+                  <Font size="20.0" />
+               </font></Hyperlink>
+            <Hyperlink layoutX="644.0" layoutY="35.0" onAction="#signUp" text="Registrarme">
+               <font>
+                  <Font size="20.0" />
+               </font></Hyperlink>
+            <Label layoutX="45.0" layoutY="8.0" text="ICESI TINDER" textFill="#ffa44f">
+               <font>
+                  <Font name="System Bold" size="74.0" />
                </font>
             </Label>
-            <Label layoutX="120.0" layoutY="309.0" text="SAKLJDSAUHNSAKJSAKJDSASAJLKJDSIJSLKJASKJASDLKADSKPOASD" />
          </children></Pane>
   </children>
 </VBox>

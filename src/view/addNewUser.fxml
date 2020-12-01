@@ -2,32 +2,74 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="762.0" style="-fx-background-color: #2ba9df;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="762.0" style="-fx-background-color: 0000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="31.0" layoutY="36.0" text="Nombre del Usuario" />
-      <Label layoutX="237.0" layoutY="70.0" text="Correo Electronico" />
-      <Label layoutX="405.0" layoutY="127.0" text="Orientacion sexual" />
-      <Label layoutX="31.0" layoutY="106.0" text="Nombre Completo" />
-      <Label layoutX="405.0" layoutY="36.0" text="Facultad " />
-      <TextField fx:id="nameUser" layoutX="31.0" layoutY="53.0" promptText="PepitoElMejor" />
-      <TextField fx:id="hotmail" layoutX="226.0" layoutY="87.0" prefHeight="25.0" prefWidth="160.0" promptText="piedradita6666@gmail.com" />
-      <TextField fx:id="fullName" layoutX="31.0" layoutY="123.0" promptText="Francisco Piedrahita" />
-      <TextField fx:id="faculty" layoutX="404.0" layoutY="53.0" promptText="Ingeniería" />
-      <RadioButton layoutX="411.0" layoutY="148.0" mnemonicParsing="false" text="Hetero" />
-      <RadioButton layoutX="410.0" layoutY="165.0" mnemonicParsing="false" text="Homoxesual" />
-      <Button layoutX="405.0" layoutY="257.0" mnemonicParsing="false" onAction="#DeleterUserData" text="Registrarme xd" />
-      <ImageView fitHeight="206.0" fitWidth="308.0" layoutX="37.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="469.0" fitWidth="736.0" layoutX="153.0" layoutY="34.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@aajajaj.png" />
+            <Image url="@llama%20500.png" />
          </image>
       </ImageView>
+      <Label layoutX="304.0" layoutY="73.0" text="Nombre de usuario">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="314.0" layoutY="210.0" text="Correo electrónico">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="322.0" layoutY="355.0" text="Orientacion sexual">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="315.0" layoutY="140.0" prefHeight="27.0" prefWidth="160.0" text="Nombre completo">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="359.0" layoutY="279.0" text="Facultad ">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TextField fx:id="nameUser" layoutX="266.0" layoutY="106.0" prefHeight="25.0" prefWidth="258.0" promptText="nombreEjemplo" />
+      <TextField fx:id="hotmail" layoutX="266.0" layoutY="243.0" prefHeight="25.0" prefWidth="258.0" promptText="ejemplo@hotmail.com" />
+      <TextField fx:id="fullName" layoutX="266.0" layoutY="174.0" prefHeight="25.0" prefWidth="258.0" promptText="Nombre Apellido" />
+      <RadioButton layoutX="266.0" layoutY="395.0" mnemonicParsing="false" text="Hetero">
+         <font>
+            <Font size="18.0" />
+         </font></RadioButton>
+      <RadioButton layoutX="395.0" layoutY="395.0" mnemonicParsing="false" text="Homosexual">
+         <font>
+            <Font size="18.0" />
+         </font></RadioButton>
+      <Button layoutX="346.0" layoutY="444.0" mnemonicParsing="false" onAction="#DeleterUserData" text="Registrarse">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <Label layoutX="255.0" layoutY="-6.0" prefHeight="85.0" prefWidth="284.0" text="REGISTRO" textFill="#ffa44f">
+         <font>
+            <Font name="System Bold" size="58.0" />
+         </font>
+      </Label>
+      <MenuButton fx:id="faculty" layoutX="319.0" layoutY="314.0" mnemonicParsing="false" text="Opciones facultades">
+        <items>
+          <MenuItem fx:id="engineering" mnemonicParsing="false" text="Ingeniería" />
+          <MenuItem mnemonicParsing="false" text="Ciencias administrativas" />
+            <MenuItem mnemonicParsing="false" text="Derecho" />
+            <MenuItem mnemonicParsing="false" text="Médicina" />
+        </items>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </MenuButton>
    </children>
    <effect>
       <ColorAdjust />

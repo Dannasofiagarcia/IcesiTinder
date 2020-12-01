@@ -2,6 +2,8 @@ package ui;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import model.MasterClass;
@@ -18,7 +20,10 @@ public class AddNewUserController {
     private TextField fullName;
 
     @FXML
-    private TextField faculty;
+    private MenuButton faculty;
+
+    @FXML
+    private MenuItem engineering;
 
     @FXML
     Pane MainPane;
@@ -32,7 +37,7 @@ public class AddNewUserController {
 
     @FXML
     void DeleterUserData(ActionEvent event) {
-
+        System.out.println(engineering.getText());
     }
 
 }
