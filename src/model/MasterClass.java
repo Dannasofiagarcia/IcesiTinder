@@ -98,10 +98,14 @@ public class MasterClass {
 
     }
 
+    public List<User> mySocialCircle() {
+        return db.getAdjNodes(currentUser.hashCode());
+    }
+
     public User getRandomUser() {
 
-        List<User> tempUsers = new ArrayList<>();
-        tempUsers.addAll(auxDb.values());
+        List<User> tempUsers = new ArrayList<User>();
+        tempUsers.addAll(db.bfs(currentUser.hashCode()));
         int iName = (int) (Math.random() * (double) tempUsers.size());
 
         return tempUsers.get(iName);
@@ -114,7 +118,13 @@ public class MasterClass {
         db.addConnection(currentUser.hashCode(), temp.hashCode(), conectionForce);
 
         return true;
-        
+
+    }
+
+    public User findUser(String userName) {
+
+        return auxDb.get(userName);
+
     }
 
     public List<User> getBestSocialPath(String userName) {
@@ -128,7 +138,5 @@ public class MasterClass {
         return db.dijkstraForAdjaMatrix(currentUser.hashCode(), auxDb.get(userName).hashCode());
 
     }
-
-
 
 }

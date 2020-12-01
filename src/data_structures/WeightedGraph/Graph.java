@@ -62,12 +62,16 @@ public class Graph<V> {
 
 	}
 
-	public List<Node<V>> bfs(int hashCodeSource) {
+	public List<V> bfs(int hashCodeSource) {
 
 		List<Node<V>> list = adjList.get(hashCodeSource).bfs();
 		Collections.reverse(list);
+		List<V> temp = new ArrayList<V>();
+		for (int i = 0; i < list.size(); i++) {
+			temp.add(list.get(i).getValue());
+		}
 
-		return list;
+		return temp;
 
 	}
 
@@ -76,6 +80,19 @@ public class Graph<V> {
 		List<Node<V>> list = adjList.get(source).dfs();
 
 		return list;
+
+	}
+
+	public List<V> getAdjNodes(int source) {
+
+		List<Node<V>> list = adjList.get(source).getAdjNodes();
+
+		List<V> temp = new ArrayList<V>();
+
+		for (int i = 0; i < list.size(); i++) {
+			temp.add(list.get(i).getValue());
+		}
+		return temp;
 
 	}
 
