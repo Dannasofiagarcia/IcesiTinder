@@ -39,7 +39,7 @@
             <Font name="System Bold" size="77.0" />
          </font>
       </Label>
-      <MenuButton fx:id="faculty" layoutX="484.0" layoutY="269.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="22.0">
+      <MenuButton fx:id="faculty" layoutX="483.0" layoutY="271.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="22.0">
         <items>
           <MenuItem fx:id="ingenieriaMI" mnemonicParsing="false" text="Ingeniería" />
           <MenuItem fx:id="cieciasAdminMI" mnemonicParsing="false" text="Ciencias administrativas" />

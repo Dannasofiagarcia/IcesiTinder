@@ -11,7 +11,7 @@ public class MasterClass {
     public final static String[] FACULTIES = { "Ingenieria", "Ciencias Administrativas y Economicas",
             "Ciencias de la Salud", "Derecho", "Ciencias Naturales", "Ciencias de la Educación" };
 
-    private Graph<User> db;
+    public Graph<User> db;
 
     private HashMap<String, User> auxDb;
 
@@ -33,7 +33,7 @@ public class MasterClass {
         User c = new User("escobar", "chumby", "Camilo Escobar", FACULTIES[0], "escobarelpatrondelmal@yahoo.com", 'm',
                 1);
         User d = new User("cordoba", "theBestPassword", "Camilo Cordoba", FACULTIES[0], "kamneklogs@gmail.com", 'm', 1);
-        User e = new User("reyes", "theBestProgrammer", "Juan Manuel Reyes", FACULTIES[0], "seyerman@gmail.com", 'm',
+        User e = new User("1", "1", "Juan Manuel Reyes", FACULTIES[0], "seyerman@gmail.com", 'm',
                 1);
 
         db.addNode(a);
