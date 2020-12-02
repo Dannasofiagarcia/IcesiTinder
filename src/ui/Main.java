@@ -25,27 +25,36 @@ public class Main extends Application {
 
 		Stage wellcomeStage = new Stage(StageStyle.TRANSPARENT);
 
-		wellcomeStage.setOpacity(0.1);
+		wellcomeStage.setOpacity(1);
 
 		Thread thread = new Thread(() -> {
+
 			try {
+
 				Thread.sleep(3000);
 
 				if (wellcomeStage.isShowing()) {
 
 					Platform.runLater(() -> {
+
 						try {
+
 							t(primaryStage, wellcomeStage);
+
 						} catch (IOException e) {
-							// TODO Auto-generated catch block
+
 							e.printStackTrace();
+
 						}
 					});
 				}
 
 			} catch (InterruptedException e) {
+
 				e.printStackTrace();
+
 			}
+
 		});
 
 		thread.setDaemon(true);
@@ -74,6 +83,7 @@ public class Main extends Application {
 
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("IcesiTinder V0.1");
+		primaryStage.setResizable(false);
 		primaryStage.show();
 	}
 

@@ -25,7 +25,7 @@
          <font>
             <Font size="19.0" />
          </font></Hyperlink>
-      <Button layoutX="548.0" layoutY="213.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="147.0" style="-fx-background-color: #0000;">
+      <Button layoutX="548.0" layoutY="213.0" mnemonicParsing="false" onAction="#goToProfileView" prefHeight="143.0" prefWidth="147.0" style="-fx-background-color: #0000;">
          <graphic>
             <ImageView fitHeight="142.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
                <image>
