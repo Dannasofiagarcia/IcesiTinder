@@ -39,15 +39,22 @@ public class MainAppController {
     }
 
     @FXML
+    void goToProfileView(ActionEvent event) throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/profileView.fxml"));
+        fxmlLoader.setController(new ProfileViewController(MainPane, mc, mainController));
+        Parent profileView = fxmlLoader.load();
+        MainPane.getChildren().clear();
+        MainPane.getChildren().add(profileView);
+
+    }
+
+    @FXML
     public void initialize() {
 
         nameLogged.setText(mc.getCurrentUser().getName());
         nameLogged.setVisible(true);
 
     }
-
-
-
-   
 
 }
