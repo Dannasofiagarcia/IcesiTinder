@@ -159,8 +159,12 @@ public class MainAppController {
     }
 
     @FXML
-    void seeMySocialCircle(ActionEvent event) {
-
+    void seeMySocialCircle(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/view/mySocialCircle.fxml"));
+        fxmlLoader.setController(new MySocialCircleController(MainPane, mc, mainController, primaryStage));
+        Parent mainView = fxmlLoader.load();
+        this.MainPane.getChildren().clear();
+        this.MainPane.getChildren().add(mainView);
     }
 
     @FXML

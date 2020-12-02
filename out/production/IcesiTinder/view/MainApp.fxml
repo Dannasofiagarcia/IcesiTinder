@@ -17,15 +17,15 @@
             <Image url="@Croods%20-%20The%20Feedback.png" />
          </image>
       </ImageView>
-      <Label fx:id="nameLogged" layoutX="433.0" layoutY="11.0" prefHeight="28.0" prefWidth="180.0" text="UserName">
+      <Label fx:id="nameLogged" layoutX="433.0" layoutY="12.0" prefHeight="28.0" prefWidth="180.0" text="UserName">
          <font>
             <Font size="19.0" />
          </font></Label>
-      <Hyperlink layoutX="622.0" layoutY="6.0" onAction="#logOut" text="Cerrar sesión">
+      <Hyperlink fx:id="hyperCerrarSesion" layoutX="622.0" layoutY="7.0" onAction="#logOut" text="Cerrar sesión">
          <font>
             <Font size="19.0" />
          </font></Hyperlink>
-      <Button layoutX="548.0" layoutY="213.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="147.0" style="-fx-background-color: #0000;">
+      <Button fx:id="goToProfileViewBtn" layoutX="548.0" layoutY="213.0" mnemonicParsing="false" onAction="#goToProfileView" prefHeight="143.0" prefWidth="147.0" style="-fx-background-color: #0000;">
          <graphic>
             <ImageView fitHeight="142.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -55,12 +55,12 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <ImageView fitHeight="35.0" fitWidth="38.0" layoutX="383.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="35.0" fitWidth="38.0" layoutX="383.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@usuario.png" />
          </image>
       </ImageView>
-      <Button layoutX="83.0" layoutY="213.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="147.0" style="-fx-background-color: #0000;">
+      <Button fx:id="searchUserOnActionBtn" layoutX="83.0" layoutY="213.0" mnemonicParsing="false" onAction="#searchUserOnActionBtn" prefHeight="143.0" prefWidth="147.0" style="-fx-background-color: #0000;">
          <graphic>
             <ImageView fitHeight="142.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -75,7 +75,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="307.0" layoutY="213.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="147.0" style="-fx-background-color: #0000;">
+      <Button fx:id="seeMySocialCircleBtn" layoutX="307.0" layoutY="213.0" mnemonicParsing="false" onAction="#seeMySocialCircle" prefHeight="143.0" prefWidth="147.0" style="-fx-background-color: #0000;">
          <graphic>
             <ImageView fitHeight="142.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
                <image>

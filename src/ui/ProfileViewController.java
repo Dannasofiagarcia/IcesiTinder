@@ -88,8 +88,8 @@ public class ProfileViewController {
         emailL.setText(t.getEmail());
         fullNameL.setText(t.getName());
         facultyL.setText(t.getFaculty());
-        genderL.setText((t.getGender() == 'm') ? "Masculino" : "Femenino");
-        sexOrL.setText(t.getSexualOrientation() == 1 ? "Heterosexual" : "Homosexual");
+        genderL.setText(t.getGender());
+        sexOrL.setText(t.getSexualOrientation());
 
     }
 

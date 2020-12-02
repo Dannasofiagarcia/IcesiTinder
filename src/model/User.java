@@ -82,8 +82,8 @@ public class User {
         this.email = email;
     }
 
-    public char getGender() {
-        return gender;
+    public String getGender() {
+       return (gender == 'm') ? "Masculino" : "Femenino";
     }
 
     public void setGender(char gender) {
@@ -102,8 +102,8 @@ public class User {
         this.status = status;
     }
 
-    public int getSexualOrientation() {
-        return sexualOrientation;
+    public String getSexualOrientation() {
+        return sexualOrientation == 1 ? "Heterosexual" : "Homosexual";
     }
 
     public void setSexualOrientation(int sexualOrientation) {

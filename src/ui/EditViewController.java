@@ -181,7 +181,7 @@ public class EditViewController {
 
         });
 
-        if (t.getSexualOrientation() == 1) {
+        if (t.getSexualOrientation().equals("Heterosexual")) {
             heteroRB.setSelected(true);
             homoRB.setSelected(false);
         } else {
