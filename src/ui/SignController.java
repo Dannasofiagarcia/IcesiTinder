@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import model.MasterClass;
 
 public class SignController {
@@ -28,12 +29,14 @@ public class SignController {
 
 	private MasterClass mc;
 	private MainController mainController;
+	Stage primaryStage;
 
-	public SignController(Pane mainPane, MasterClass mc, MainController mainController) {
+	public SignController(Pane mainPane, MasterClass mc, MainController mainController, Stage primaryStage) {
 		MainPane = mainPane;
-		addN = new AddNewUserController(MainPane, mc, mainController);
+		addN = new AddNewUserController(MainPane, mc, mainController, primaryStage);
 		this.mc = mc;
 		this.mainController = mainController;
+		this.primaryStage = primaryStage;
 	}
 
 	public void setPane(Pane MainPane) {
@@ -71,7 +74,7 @@ public class SignController {
 	public void logIn() throws IOException {
 
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/MainApp.fxml"));
-		fxmlLoader.setController(new MainAppController(MainPane, mc, mainController));
+		fxmlLoader.setController(new MainAppController(MainPane, mc, mainController, primaryStage));
 		Parent mainApp = fxmlLoader.load();
 
 		MainPane.getChildren().clear();

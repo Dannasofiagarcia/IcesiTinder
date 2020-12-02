@@ -18,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import model.MasterClass;
 import model.User;
 
@@ -77,18 +78,21 @@ public class AddNewUserController {
     private MasterClass mc;
     MainController mainController;
 
-    public AddNewUserController(Pane mainPane, MasterClass mc, MainController mainController) {
+    Stage primaryStage;
+
+    public AddNewUserController(Pane mainPane, MasterClass mc, MainController mainController, Stage primaryStage) {
 
         MainPane = mainPane;
         this.mc = mc;
         this.mainController = mainController;
+        this.primaryStage = primaryStage;
 
     }
 
     @FXML
     void signIn(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/signInOrSignUp.fxml"));
-        fxmlLoader.setController(new SignController(MainPane, mc, mainController));
+        fxmlLoader.setController(new SignController(MainPane, mc, mainController, primaryStage));
         Parent signIn = fxmlLoader.load();
         MainPane.getChildren().clear();
         MainPane.getChildren().add(signIn);
