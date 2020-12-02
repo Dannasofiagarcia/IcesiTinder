@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -20,14 +20,6 @@
             <Font size="20.0" />
          </font></Label>
       <TextField fx:id="userName" layoutX="249.0" layoutY="177.0" prefHeight="25.0" prefWidth="251.0" />
-      <Button layoutX="325.0" layoutY="313.0" mnemonicParsing="false" onAction="#singInUser" prefHeight="30.0" prefWidth="100.0" text="Ingresar">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-      <Button layoutX="328.0" layoutY="412.0" mnemonicParsing="false" onAction="#signUpUser" text="Registrarse">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
       <Label layoutX="289.0" layoutY="362.0" prefHeight="30.0" prefWidth="172.0" text="¿Todavía no tienes cuenta?" wrapText="true">
          <font>
             <Font size="14.0" />
@@ -44,10 +36,20 @@
             <Image url="@Croods%20-%20Standing%20(2).png" />
          </image>
       </ImageView>
-      <Label layoutX="480.0" layoutY="85.0" text="¡Bienvenido/a!">
+      <Label layoutX="466.0" layoutY="84.0" text="¡Hola de nuevo!">
          <font>
             <Font name="System Bold" size="39.0" />
          </font>
       </Label>
+      <Hyperlink layoutX="333.0" layoutY="314.0" onAction="#singInUser" text="Ingresar">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink layoutX="322.0" layoutY="407.0" onAction="#signUpUser" text="Registrarse">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Hyperlink>
    </children>
 </AnchorPane>
