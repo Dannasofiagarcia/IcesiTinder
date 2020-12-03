@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="335.0" prefWidth="357.0" style="-fx-border-color: #27ae60; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Hyperlink layoutX="59.0" layoutY="250.0" onAction="#cancelAndReturnMainView" text="Cancelar" />
+      <Hyperlink fx:id="generateBestPath" disable="true" layoutX="166.0" layoutY="250.0" onAction="#generateBestPath" text="Obtener recomendacion" />
+      <Label layoutX="21.0" layoutY="22.0" prefHeight="35.0" prefWidth="329.0" text="Modo timido :D" wrapText="true">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="97.0" prefHeight="100.0" prefWidth="319.0" text="Para ti recomendamos una conexion indirecta, nuestro potente modulo de inteligencia artificial generara una lista con la mejor prediccion para recomendarte la mejor secuencia de usuarios para que ellos te ayuden a conocer a tu crush (Agregandolos a tu circulo social con su alias)" wrapText="true" />
+      <CheckBox layoutX="26.0" layoutY="213.0" mnemonicParsing="false" onAction="#termsAndConditionsCheckA" text="Aceptar terminos y condiciones">
+         <font>
+            <Font name="System Italic" size="13.0" />
+         </font>
+      </CheckBox>
+      <Label layoutX="25.0" layoutY="63.0" prefHeight="35.0" prefWidth="213.0" text="Terminos y condiciones" wrapText="true">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

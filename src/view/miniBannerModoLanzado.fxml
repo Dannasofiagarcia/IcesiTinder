@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="335.0" prefWidth="357.0" style="-fx-border-color: #27ae60; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="35.0" layoutY="115.0" prefHeight="64.0" prefWidth="302.0" text="Para ti recomendamos una conexion directa, agregaremos a esta maravillosa persona a tu circulo social, donde obtendras su email de contacto." wrapText="true" />
+      <Label layoutX="20.0" layoutY="32.0" prefHeight="35.0" prefWidth="329.0" text="Modo lanzado &gt;:D" wrapText="true">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <CheckBox layoutX="35.0" layoutY="207.0" mnemonicParsing="false" onAction="#termsAndConditionsCheckB" text="Aceptar terminos y condiciones">
+         <font>
+            <Font name="System Italic" size="13.0" />
+         </font>
+      </CheckBox>
+      <Label layoutX="34.0" layoutY="81.0" prefHeight="35.0" prefWidth="213.0" text="Terminos y condiciones" wrapText="true">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="50.0" layoutY="264.0" onAction="#cancelAndReturnMainView" text="Cancelar" />
+      <Hyperlink fx:id="generateDirectConection" disable="true" layoutX="179.0" layoutY="264.0" onAction="#generateDirectConection" text="Obtener conexion" />
+   </children>
+</Pane>
