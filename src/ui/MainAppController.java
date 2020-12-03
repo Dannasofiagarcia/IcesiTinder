@@ -14,6 +14,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -72,6 +73,9 @@ public class MainAppController {
     private Hyperlink hyperCerrarSesion;
 
     @FXML
+    private Hyperlink ajustesOpt;
+
+    @FXML
     private Button goToProfileViewBtn;
 
     @FXML
@@ -106,6 +110,7 @@ public class MainAppController {
                 goToProfileViewBtn.setDisable(false);
                 searchUserOnActionBtn.setDisable(false);
                 seeMySocialCircleBtn.setDisable(false);
+                ajustesOpt.setDisable(false);
 
                 stageToSearch.close();
 
@@ -125,6 +130,7 @@ public class MainAppController {
             }
         });
 
+        ajustesOpt.setDisable(true);
         hyperCerrarSesion.setDisable(true);
         goToProfileViewBtn.setDisable(true);
         searchUserOnActionBtn.setDisable(true);
@@ -167,12 +173,86 @@ public class MainAppController {
         this.MainPane.getChildren().add(mainView);
     }
 
+    Stage stageToSettings;
+
+    @FXML
+    void ajustesOpt(ActionEvent event) throws IOException {
+
+        stageToSettings = new Stage(StageStyle.TRANSPARENT);
+
+        FXMLLoader fxSearch = new FXMLLoader(getClass().getResource("/view/settingsView.fxml"));
+        fxSearch.setController(this);
+        Parent parentToSearch = fxSearch.load();
+
+        Scene sceneToSearch = new Scene(parentToSearch);
+        stageToSettings.setScene(sceneToSearch);
+
+        stageToSettings.setAlwaysOnTop(true);
+
+        cancelarBtn.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent arg0) {
+
+                hyperCerrarSesion.setDisable(false);
+                goToProfileViewBtn.setDisable(false);
+                searchUserOnActionBtn.setDisable(false);
+                seeMySocialCircleBtn.setDisable(false);
+                // ajustesOpt.setDisable(false);
+
+                stageToSettings.close();
+
+            }
+
+        });
+
+        // ajustesOpt.setDisable(true);
+        hyperCerrarSesion.setDisable(true);
+        goToProfileViewBtn.setDisable(true);
+        searchUserOnActionBtn.setDisable(true);
+        seeMySocialCircleBtn.setDisable(true);
+
+        anchorPaneToSB.getChildren().clear();
+        anchorPaneToSB.getChildren().add(sbSettingsA);
+
+        stageToSettings.show();
+
+    }
+
+    @FXML
+    void saveSettings(ActionEvent event) {
+
+        mc.setDataStructureType(sbSettingsA.isState());
+        stageToSettings.close();
+
+        sbSettingsA.setState(mc.isDataStructureType());
+
+        if (sbSettingsA.isState()) {
+            sbSettingsA.getButton().setStyle(
+                    "-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0.2, 0.0, 0.0, 2); -fx-background-color: WHITE;");
+        } else {
+            sbSettingsA.getButton().setStyle(
+                    "-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0.2, 0.0, 0.0, 2); -fx-background-color: #00893d;");
+        }
+
+        hyperCerrarSesion.setDisable(false);
+        goToProfileViewBtn.setDisable(false);
+        searchUserOnActionBtn.setDisable(false);
+        seeMySocialCircleBtn.setDisable(false);
+
+    }
+
+    SwitchButton sbSettingsA;
+
+    @FXML
+    private AnchorPane anchorPaneToSB;
+
     @FXML
     public void initialize() {
 
         nameLogged.setText(mc.getCurrentUser().getName());
         nameLogged.setVisible(true);
-
+        sbSettingsA = new SwitchButton();
     }
 
 }

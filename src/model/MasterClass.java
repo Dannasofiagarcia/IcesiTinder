@@ -184,4 +184,12 @@ public class MasterClass {
 
     }
 
+    public boolean isDataStructureType() {
+        return dataStructureType;
+    }
+
+    public void setDataStructureType(boolean dataStructureType) {
+        this.dataStructureType = dataStructureType;
+    }
+
 }

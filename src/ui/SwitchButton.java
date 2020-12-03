@@ -57,4 +57,36 @@ public class SwitchButton extends StackPane {
         setOnMouseClicked(click);
         button.setOnMouseClicked(click);
     }
+
+    public Rectangle getBack() {
+        return back;
+    }
+
+    public Button getButton() {
+        return button;
+    }
+
+    public String getButtonStyleOff() {
+        return buttonStyleOff;
+    }
+
+    public void setButtonStyleOff(String buttonStyleOff) {
+        this.buttonStyleOff = buttonStyleOff;
+    }
+
+    public String getButtonStyleOn() {
+        return buttonStyleOn;
+    }
+
+    public void setButtonStyleOn(String buttonStyleOn) {
+        this.buttonStyleOn = buttonStyleOn;
+    }
+
+    public boolean isState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
+    }
 }
