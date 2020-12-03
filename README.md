@@ -14,6 +14,6 @@ TinderIcesi is a software system which seeks to solve the lack of communication 
 ## Documentation
 
 - Statement of the project click [HERE](https://github.com/Dannasofiagarcia/IcesiTinder/docs/EnunciadoTI3)
-- Engineering method click [HERE](https://github.com/Dannasofiagarcia/IcesiTinder/docs/Metodo ingenieria)
-- Project requeriments [HERE](https://github.com/Dannasofiagarcia/IcesiTinder/docs/Requerimientos proyecto)
+- Engineering method click [HERE](https://github.com/Dannasofiagarcia/IcesiTinder/docs/Metodo_ingenieria)
+- Project requeriments [HERE](https://github.com/Dannasofiagarcia/IcesiTinder/docs/Requerimientos_proyecto)
 - TAD graph [HERE](https://github.com/Dannasofiagarcia/IcesiTinder/docs/TAD-WeightedGraph)
