@@ -18,7 +18,7 @@ TinderIcesi is a software system which seeks to solve the lack of communication 
 
 ## Program pictures
 
-- Loading interface https://github.com/Dannasofiagarcia/IcesiTinder/issues/1#issue-756391241
+- Loading interface (https://github.com/Dannasofiagarcia/IcesiTinder/issues/1#issue-756391241)
 - Main interface 
 - Sign in interface
 - Sign up interface
