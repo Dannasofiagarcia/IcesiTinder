@@ -36,7 +36,7 @@
             <Image url="@usuario.png" />
          </image>
       </ImageView>
-      <Hyperlink layoutX="14.0" layoutY="13.0" text="Volver a inicio">
+      <Hyperlink layoutX="14.0" layoutY="13.0" onAction="#returnToMainAppView" text="Volver a inicio">
          <font>
             <Font size="19.0" />
          </font>

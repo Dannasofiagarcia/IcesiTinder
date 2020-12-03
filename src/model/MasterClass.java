@@ -30,7 +30,7 @@ public class MasterClass {
         dataStructureType = true;
 
         User a = new User("andreNR19", "pinina", "Andrea Nuñez", FACULTIES[0], "andrea.nr2000@gmail.com", 'f', 1);
-        User b = new User("TheDannyta", "cloe", "Danna Garcia", FACULTIES[0], "dannita123@yahoo.com", 'f', 1);
+        User b = new User("dannaSG18", "cloe", "Danna Garcia", FACULTIES[0], "dannita123@yahoo.com", 'f', 1);
         User c = new User("escobarElPatronDelMal", "chumby", "Camilo Escobar Junior", FACULTIES[0],
                 "traquetoMan123@yahoo.com", 'm', 1);
         User d = new User("cristancho666", "theBestPassword", "Camilo Cordoba", FACULTIES[0], "kamneklogs@gmail.com",

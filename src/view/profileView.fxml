@@ -15,15 +15,15 @@
 
 <Pane prefHeight="512.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="tittleViewPerfil" layoutX="14.0" layoutY="11.0" opacity="0.81" text="Mi perfil">
+      <Label fx:id="tittleViewPerfil" layoutX="14.0" layoutY="1.0" opacity="0.81" text="Mi perfil" textFill="#ff704f">
          <font>
             <Font name="System Bold" size="34.0" />
          </font>
       </Label>
-      <GridPane layoutX="50.0" layoutY="131.0" prefHeight="279.0" prefWidth="313.0">
+      <GridPane layoutX="26.0" layoutY="115.0" prefHeight="305.0" prefWidth="364.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="151.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="162.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.5" minWidth="10.0" prefWidth="192.5" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="164.5" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -34,96 +34,120 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label alignment="CENTER" text="Nombre de usuario:" textAlignment="CENTER" GridPane.halignment="RIGHT">
+            <Label alignment="CENTER" text="Nombre de usuario" textAlignment="CENTER" GridPane.halignment="RIGHT">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" text="Correo electronico" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+            <Label alignment="CENTER" text="Correo" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" text="Orientacion sexual:" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+            <Label alignment="CENTER" text="Orientación sexual" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label alignment="CENTER" text="Nombre completo" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" text="Facultad:" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+            <Label alignment="CENTER" text="Facultad" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" text="Genero:" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+            <Label alignment="CENTER" text="Género" textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="userNameL" text="Label" GridPane.columnIndex="1">
+            <Label fx:id="userNameL" prefHeight="27.0" prefWidth="135.0" text="Label" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
             </Label>
-            <Label fx:id="emailL" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="emailL" prefHeight="17.0" prefWidth="120.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
             </Label>
-            <Label fx:id="fullNameL" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label fx:id="fullNameL" prefHeight="17.0" prefWidth="135.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
             </Label>
-            <Label fx:id="facultyL" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Label fx:id="facultyL" prefHeight="17.0" prefWidth="143.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
             </Label>
-            <Label fx:id="genderL" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Label fx:id="genderL" prefHeight="27.0" prefWidth="142.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
             </Label>
-            <Label fx:id="sexOrL" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <Label fx:id="sexOrL" prefHeight="17.0" prefWidth="142.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
             </Label>
          </children>
       </GridPane>
-      <Button fx:id="editButton" layoutX="353.0" layoutY="449.0" mnemonicParsing="false" onAction="#loadEditProfileView" text="Editar" />
+      <Button fx:id="editButton" layoutX="256.0" layoutY="449.0" mnemonicParsing="false" onAction="#loadEditProfileView" text="Editar">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
       <Separator layoutY="49.0" prefHeight="0.0" prefWidth="762.0" />
-      <Label fx:id="nameLogged" layoutX="484.0" layoutY="19.0" prefHeight="18.0" prefWidth="130.0" text="UserName">
+      <Label fx:id="nameLogged" layoutX="483.0" layoutY="13.0" prefHeight="18.0" prefWidth="130.0" text="UserName">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Hyperlink layoutX="623.0" layoutY="14.0" onAction="#logOut" text="Cerrar sesión">
+      <Hyperlink layoutX="623.0" layoutY="7.0" onAction="#logOut" text="Cerrar sesión">
          <font>
             <Font size="19.0" />
          </font>
       </Hyperlink>
-      <ImageView fitHeight="35.0" fitWidth="38.0" layoutX="429.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="35.0" fitWidth="38.0" layoutX="429.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@usuario.png" />
          </image>
       </ImageView>
-      <Button layoutX="32.0" layoutY="77.0" mnemonicParsing="false" onAction="#returnToMainAppView" text="Volver al inicio" />
+      <Button layoutX="413.0" layoutY="449.0" mnemonicParsing="false" onAction="#returnToMainAppView" text="Volver al inicio">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
       <Pane fx:id="paneToDoMatch" layoutX="381.0" layoutY="88.0" prefHeight="335.0" prefWidth="357.0">
          <children>
-            <Label layoutX="7.0" layoutY="99.0" text="Genial, ya estan conectados!">
+            <Label layoutX="31.0" layoutY="51.0" prefWidth="296.0" text="¡Ya están conectados!" textAlignment="CENTER" textFill="#ff704f" wrapText="true">
                <font>
-                  <Font name="System Bold" size="21.0" />
+                  <Font name="System Bold" size="37.0" />
                </font>
             </Label>
-            <Label fx:id="statusConnectionL" alignment="CENTER" layoutX="4.0" layoutY="118.0" prefHeight="129.0" prefWidth="349.0" text="Labelasjsakjsksaknsdaksdkjnask" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="statusConnectionL" alignment="CENTER" layoutX="4.0" layoutY="137.0" prefHeight="129.0" prefWidth="349.0" text="Labelasjsakjsksaknsdaksdkjnask" textAlignment="CENTER" wrapText="true">
                <font>
-                  <Font name="System Bold" size="36.0" />
+                  <Font name="System Bold" size="30.0" />
                </font>
             </Label>
          </children>
