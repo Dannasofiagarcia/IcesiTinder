@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -23,236 +24,232 @@ import model.MasterClass;
 
 public class MainAppController {
 
-    @FXML
-    private Pane MainPane;
+	@FXML
+	private Pane MainPane;
 
-    @FXML
-    private Label nameLogged;
+	@FXML
+	private Label nameLogged;
 
-    private MasterClass mc;
-    MainController mainController;
-    Stage primaryStage;
+	private MasterClass mc;
+	MainController mainController;
+	Stage primaryStage;
 
-    public MainAppController(Pane MainPane, MasterClass mc, MainController mainController, Stage primaryStage) {
-        this.MainPane = MainPane;
-        this.mc = mc;
-        this.mainController = mainController;
-        this.primaryStage = primaryStage;
-    }
+	public MainAppController(Pane MainPane, MasterClass mc, MainController mainController, Stage primaryStage) {
+		this.MainPane = MainPane;
+		this.mc = mc;
+		this.mainController = mainController;
+		this.primaryStage = primaryStage;
+	}
 
-    @FXML
-    void logOut(ActionEvent event) throws IOException {
+	@FXML
+	void logOut(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
-        fxmlLoader.setController(mainController);
-        Parent mainView = fxmlLoader.load();
-        MainPane.getChildren().clear();
-        MainPane.getChildren().add(mainView);
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
+		fxmlLoader.setController(mainController);
+		Parent mainView = fxmlLoader.load();
+		MainPane.getChildren().clear();
+		MainPane.getChildren().add(mainView);
 
-    }
+	}
 
-    @FXML
-    void goToProfileView(ActionEvent event) throws IOException {
+	@FXML
+	void goToProfileView(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/profileView.fxml"));
-        fxmlLoader.setController(new ProfileViewController(MainPane, mc, mainController, primaryStage,
-                mc.getCurrentUser().getUserName()));
-        Parent profileView = fxmlLoader.load();
-        MainPane.getChildren().clear();
-        MainPane.getChildren().add(profileView);
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/profileView.fxml"));
+		fxmlLoader.setController(new ProfileViewController(MainPane, mc, mainController, primaryStage,
+				mc.getCurrentUser().getUserName()));
+		Parent profileView = fxmlLoader.load();
+		MainPane.getChildren().clear();
+		MainPane.getChildren().add(profileView);
 
-    }
+	}
 
-    @FXML
-    private Button buscarBtn;
+	@FXML
+	private Hyperlink buscarBtn;
 
-    @FXML
-    private Button cancelarBtn;
+	@FXML
+	private Hyperlink cancelarBtn;
 
-    @FXML
-    private Hyperlink hyperCerrarSesion;
+	@FXML
+	private Hyperlink hyperCerrarSesion;
 
-    @FXML
-    private Hyperlink ajustesOpt;
+	@FXML
+	private Hyperlink ajustesOpt;
 
-    @FXML
-    private Button goToProfileViewBtn;
+	@FXML
+	private Button goToProfileViewBtn;
 
-    @FXML
-    private Button searchUserOnActionBtn;
+	@FXML
+	private Button searchUserOnActionBtn;
 
-    @FXML
-    private Button seeMySocialCircleBtn;
+	@FXML
+	private Button seeMySocialCircleBtn;
 
-    @FXML
-    private TextField userNameToSearch;
+	@FXML
+	private TextField userNameToSearch;
 
-    @FXML
-    void searchUserOnActionBtn(ActionEvent event) throws IOException {
+	@FXML
+	void searchUserOnActionBtn(ActionEvent event) throws IOException {
 
-        Stage stageToSearch = new Stage(StageStyle.TRANSPARENT);
+		Stage stageToSearch = new Stage(StageStyle.TRANSPARENT);
 
-        FXMLLoader fxSearch = new FXMLLoader(getClass().getResource("/view/paneToSearch.fxml"));
-        fxSearch.setController(this);
-        Parent parentToSearch = fxSearch.load();
+		FXMLLoader fxSearch = new FXMLLoader(getClass().getResource("/view/paneToSearch.fxml"));
+		fxSearch.setController(this);
+		Parent parentToSearch = fxSearch.load();
 
-        Scene sceneToSearch = new Scene(parentToSearch);
-        stageToSearch.setScene(sceneToSearch);
+		Scene sceneToSearch = new Scene(parentToSearch);
+		stageToSearch.setScene(sceneToSearch);
 
-        stageToSearch.setAlwaysOnTop(true);
+		stageToSearch.setAlwaysOnTop(true);
 
-        cancelarBtn.setOnAction(new EventHandler<ActionEvent>() {
+		cancelarBtn.setOnAction(new EventHandler<ActionEvent>() {
 
-            @Override
-            public void handle(ActionEvent arg0) {
+			@Override
+			public void handle(ActionEvent arg0) {
 
-                hyperCerrarSesion.setDisable(false);
-                goToProfileViewBtn.setDisable(false);
-                searchUserOnActionBtn.setDisable(false);
-                seeMySocialCircleBtn.setDisable(false);
-                ajustesOpt.setDisable(false);
+				hyperCerrarSesion.setDisable(false);
+				goToProfileViewBtn.setDisable(false);
+				searchUserOnActionBtn.setDisable(false);
+				seeMySocialCircleBtn.setDisable(false);
+				ajustesOpt.setDisable(false);
 
-                stageToSearch.close();
+				stageToSearch.close();
 
-            }
+			}
 
-        });
+		});
 
-        buscarBtn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent arg0) {
-                try {
-                    searchUserFunction(userNameToSearch.getText(), stageToSearch);
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
-        });
+		buscarBtn.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent arg0) {
+				try {
+					searchUserFunction(userNameToSearch.getText(), stageToSearch);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
 
-        ajustesOpt.setDisable(true);
-        hyperCerrarSesion.setDisable(true);
-        goToProfileViewBtn.setDisable(true);
-        searchUserOnActionBtn.setDisable(true);
-        seeMySocialCircleBtn.setDisable(true);
+		ajustesOpt.setDisable(true);
+		hyperCerrarSesion.setDisable(true);
+		goToProfileViewBtn.setDisable(true);
+		searchUserOnActionBtn.setDisable(true);
+		seeMySocialCircleBtn.setDisable(true);
 
-        stageToSearch.show();
+		stageToSearch.show();
 
-    }
+	}
 
-    public void searchUserFunction(String userName, Stage stageToSearch) throws IOException {
+	public void searchUserFunction(String userName, Stage stageToSearch) throws IOException {
 
-        if (mc.findUser(userName) != null) {
-            stageToSearch.close();
+		if (mc.findUser(userName) != null) {
+			stageToSearch.close();
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/profileView.fxml"));
-            fxmlLoader.setController(new ProfileViewController(MainPane, mc, mainController, primaryStage, userName));
-            Parent profileView = fxmlLoader.load();
-            MainPane.getChildren().clear();
-            MainPane.getChildren().add(profileView);
-
-        } else {
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Usuario no encontrado");
-            alert.setHeaderText(null);
-            alert.setContentText("El usuario no se encuentra registrado en el sistema");
-
-            stageToSearch.setAlwaysOnTop(false);
-            alert.showAndWait();
-            stageToSearch.setAlwaysOnTop(true);
-        }
-
-    }
-
-    @FXML
-    void seeMySocialCircle(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/view/mySocialCircle.fxml"));
-        fxmlLoader.setController(new MySocialCircleController(MainPane, mc, mainController, primaryStage));
-        Parent mainView = fxmlLoader.load();
-        this.MainPane.getChildren().clear();
-        this.MainPane.getChildren().add(mainView);
-    }
-
-    Stage stageToSettings;
-
-    @FXML
-    void ajustesOpt(ActionEvent event) throws IOException {
-
-        stageToSettings = new Stage(StageStyle.TRANSPARENT);
-
-        FXMLLoader fxSearch = new FXMLLoader(getClass().getResource("/view/settingsView.fxml"));
-        fxSearch.setController(this);
-        Parent parentToSearch = fxSearch.load();
-
-        Scene sceneToSearch = new Scene(parentToSearch);
-        stageToSettings.setScene(sceneToSearch);
-
-        stageToSettings.setAlwaysOnTop(true);
-
-        cancelarBtn.setOnAction(new EventHandler<ActionEvent>() {
-
-            @Override
-            public void handle(ActionEvent arg0) {
-
-                hyperCerrarSesion.setDisable(false);
-                goToProfileViewBtn.setDisable(false);
-                searchUserOnActionBtn.setDisable(false);
-                seeMySocialCircleBtn.setDisable(false);
-                // ajustesOpt.setDisable(false);
-
-                stageToSettings.close();
-
-            }
-
-        });
-
-        // ajustesOpt.setDisable(true);
-        hyperCerrarSesion.setDisable(true);
-        goToProfileViewBtn.setDisable(true);
-        searchUserOnActionBtn.setDisable(true);
-        seeMySocialCircleBtn.setDisable(true);
-
-        anchorPaneToSB.getChildren().clear();
-        anchorPaneToSB.getChildren().add(sbSettingsA);
-
-        stageToSettings.show();
-
-    }
-
-    @FXML
-    void saveSettings(ActionEvent event) {
-
-        mc.setDataStructureType(sbSettingsA.isState());
-        stageToSettings.close();
-
-        sbSettingsA.setState(mc.isDataStructureType());
-
-        if (sbSettingsA.isState()) {
-            sbSettingsA.getButton().setStyle(
-                    "-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0.2, 0.0, 0.0, 2); -fx-background-color: WHITE;");
-        } else {
-            sbSettingsA.getButton().setStyle(
-                    "-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0.2, 0.0, 0.0, 2); -fx-background-color: #00893d;");
-        }
-
-        hyperCerrarSesion.setDisable(false);
-        goToProfileViewBtn.setDisable(false);
-        searchUserOnActionBtn.setDisable(false);
-        seeMySocialCircleBtn.setDisable(false);
-
-    }
-
-    SwitchButton sbSettingsA;
-
-    @FXML
-    private AnchorPane anchorPaneToSB;
-
-    @FXML
-    public void initialize() {
-
-        nameLogged.setText(mc.getCurrentUser().getName());
-        nameLogged.setVisible(true);
-        sbSettingsA = new SwitchButton();
-    }
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/profileView.fxml"));
+			fxmlLoader.setController(new ProfileViewController(MainPane, mc, mainController, primaryStage, userName));
+			Parent profileView = fxmlLoader.load();
+			MainPane.getChildren().clear();
+			MainPane.getChildren().add(profileView);
+
+		} else {
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Usuario no encontrado");
+			alert.setHeaderText(null);
+			alert.setContentText("El usuario no se encuentra registrado en el sistema");
+
+			stageToSearch.setAlwaysOnTop(false);
+			alert.showAndWait();
+			stageToSearch.setAlwaysOnTop(true);
+		}
+
+	}
+
+	@FXML
+	void seeMySocialCircle(ActionEvent event) throws IOException {
+		FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/view/mySocialCircle.fxml"));
+		fxmlLoader.setController(new MySocialCircleController(MainPane, mc, mainController, primaryStage));
+		Parent mainView = fxmlLoader.load();
+		this.MainPane.getChildren().clear();
+		this.MainPane.getChildren().add(mainView);
+	}
+
+	Stage stageToSettings;
+
+	@FXML
+	void ajustesOpt(ActionEvent event) throws IOException {
+
+		stageToSettings = new Stage(StageStyle.TRANSPARENT);
+
+		FXMLLoader fxSearch = new FXMLLoader(getClass().getResource("/view/settingsView.fxml"));
+		fxSearch.setController(this);
+		Parent parentToSearch = fxSearch.load();
+
+		Scene sceneToSearch = new Scene(parentToSearch);
+		stageToSettings.setScene(sceneToSearch);
+
+		stageToSettings.setAlwaysOnTop(true);
+		modalityAP.getChildren().add(modalityCB);
+
+		cancelarBtn.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+
+				hyperCerrarSesion.setDisable(false);
+				goToProfileViewBtn.setDisable(false);
+				searchUserOnActionBtn.setDisable(false);
+				seeMySocialCircleBtn.setDisable(false);
+				// ajustesOpt.setDisable(false);
+
+				stageToSettings.close();
+
+			}
+
+		});
+
+		// ajustesOpt.setDisable(true);
+		hyperCerrarSesion.setDisable(true);
+		goToProfileViewBtn.setDisable(true);
+		searchUserOnActionBtn.setDisable(true);
+		seeMySocialCircleBtn.setDisable(true);
+
+		stageToSettings.show();
+
+	}
+
+	@FXML
+	void saveSettings(ActionEvent event) {
+
+		if(modalityCB.isSelected()) {
+			mc.setDataStructureType(false);
+		}else {
+			mc.setDataStructureType(true);
+
+		}
+		hyperCerrarSesion.setDisable(false);
+		goToProfileViewBtn.setDisable(false);
+		searchUserOnActionBtn.setDisable(false);
+		seeMySocialCircleBtn.setDisable(false);
+		stageToSettings.close();
+
+	}
+	@FXML
+    private AnchorPane modalityAP;
+	
+	private CheckBox modalityCB;
+
+	@FXML
+	public void initialize() {
+
+		nameLogged.setText(mc.getCurrentUser().getName());
+		nameLogged.setVisible(true);
+		
+		modalityCB = new CheckBox();
+		modalityCB.setText("Activar soporte con matriz de adyacencia");
+		
+		
+		
+	}
 
 }
