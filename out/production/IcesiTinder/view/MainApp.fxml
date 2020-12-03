@@ -92,6 +92,14 @@
             <Font name="System Bold" size="39.0" />
          </font>
       </Label>
-      <Hyperlink fx:id="ajustesOpt" layoutX="22.0" layoutY="15.0" onAction="#ajustesOpt" text="Ajustes" />
+      <Hyperlink fx:id="ajustesOpt" layoutX="59.0" layoutY="7.0" onAction="#ajustesOpt" text="Ajustes">
+         <font>
+            <Font size="20.0" />
+         </font></Hyperlink>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="17.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@herramientas.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

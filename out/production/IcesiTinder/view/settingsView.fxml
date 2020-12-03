@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" style="-fx-border-color: #ff704f; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff50" height="300.0" stroke="BLACK" strokeType="INSIDE" width="400.0" />
-      <Button layoutX="236.0" layoutY="236.0" mnemonicParsing="false" onAction="#saveSettings" text="Guardar cambios" />
-      <Button fx:id="cancelarBtn" layoutX="63.0" layoutY="236.0" mnemonicParsing="false" text="Descartar cambios" />
-      <AnchorPane fx:id="anchorPaneToSB" layoutX="201.0" layoutY="101.0" prefHeight="26.0" prefWidth="71.0" />
-      <Label layoutX="46.0" layoutY="82.0" prefHeight="63.0" prefWidth="130.0" text="Suporte del grafo social con matriz de adjacencia" wrapText="true" />
+      <AnchorPane fx:id="modalityAP" layoutX="107.0" layoutY="95.0" prefHeight="110.0" prefWidth="200.0" />
+      <Label layoutX="114.0" layoutY="21.0" text="AJUSTES">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font>
+      </Label>
+      <Hyperlink fx:id="cancelarBtn" layoutX="32.0" layoutY="222.0" text="Descartar cambios">
+         <font>
+            <Font size="17.0" />
+         </font></Hyperlink>
+      <Hyperlink layoutX="230.0" layoutY="222.0" onAction="#saveSettings" text="Guardar cambios">
+         <font>
+            <Font size="17.0" />
+         </font></Hyperlink>
    </children>
 </Pane>
