@@ -204,8 +204,13 @@ public class MiniController {
     }
 
     @FXML
+    private Hyperlink indirectMatchHL;
+    @FXML
     public void initialize() throws IOException {
-
+    	if(mc.db.getNodes().get(mc.getCurrentUser().hashCode()).getEdges().size()==0) {
+			
+			indirectMatchHL.setDisable(true);
+		}
     }
 
 }

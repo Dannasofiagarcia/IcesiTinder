@@ -111,9 +111,9 @@ public class AddNewUserController {
                     emailTF.getText(), (hombreRB.isSelected()) ? 'm' : 'f', (homoRButton.isSelected() ? 0 : 1));
 
             Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
+            alert.setTitle("Registro completado");
             alert.setHeaderText(null);
-            alert.setContentText("I have a great message for you!");
+            alert.setContentText("¡Felicitaciones! Ya haces parte de esta gran familia.");
 
             alert.showAndWait();
 

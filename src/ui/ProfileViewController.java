@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -36,6 +37,7 @@ public class ProfileViewController {
 
 	@FXML
 	private Label sexOrL;
+
 
 	@FXML
 	private Label nameLogged;
@@ -137,6 +139,8 @@ public class ProfileViewController {
 				Parent doMatch = fxmlLoader.load();
 				paneToDoMatch.getChildren().clear();
 				paneToDoMatch.getChildren().add(doMatch);
+				
+				
 			}
 			
 
