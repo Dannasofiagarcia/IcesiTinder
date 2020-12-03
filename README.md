@@ -13,8 +13,8 @@ TinderIcesi is a software system which seeks to solve the lack of communication 
 
 ## Documentation
 
-- Documentation [HERE](https://github.com/Dannasofiagarcia/IcesiTinder/docs/DOCUMENTACION.pdf)
-- Engineering method click [HERE](https://github.com/Dannasofiagarcia/IcesiTinder/docs/Metodo_ingenieria.pdf)
+- Documentation [HERE](/docs/DOCUMENTACION.pdf)
+- Engineering method click [HERE](/docs/Metodo_ingenieria.pdf)
 
 ## Program pictures
 
