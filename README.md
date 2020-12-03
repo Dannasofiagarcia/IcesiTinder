@@ -18,9 +18,11 @@ TinderIcesi is a software system which seeks to solve the lack of communication 
 
 ## Program pictures
 
-- Loading interface 
-<img src="src/view/s1.png" width = 600>
 - Main interface 
+<img src="src/view/s1.png" width = 600>
 - Sign in interface
+<img src="src/view/s2.png" width = 600>
 - Sign up interface
+<img src="src/view/s3.png" width = 600>
 - Main user options interface
+<img src="src/view/s4.png" width = 600>
