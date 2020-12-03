@@ -29,12 +29,13 @@ public class MasterClass {
 
         dataStructureType = true;
 
-        User a = new User("andrea", "pinina", "Andrea Nuñez", FACULTIES[0], "andrea.nr2000@gmail.com", 'f', 1);
-        User b = new User("danna", "cloe", "Danna Garcia", FACULTIES[0], "dannita123@yahoo.com", 'f', 1);
-        User c = new User("escobar", "chumby", "Camilo Escobar", FACULTIES[0], "escobarelpatrondelmal@yahoo.com", 'm',
-                1);
-        User d = new User("cordoba", "theBestPassword", "Camilo Cordoba", FACULTIES[0], "kamneklogs@gmail.com", 'm', 1);
-        User e = new User("1", "1", "Juan Manuel Reyes", FACULTIES[0], "seyerman@gmail.com", 'm', 1);
+        User a = new User("andreNR19", "pinina", "Andrea Nuñez", FACULTIES[0], "andrea.nr2000@gmail.com", 'f', 1);
+        User b = new User("TheDannyta", "cloe", "Danna Garcia", FACULTIES[0], "dannita123@yahoo.com", 'f', 1);
+        User c = new User("escobarElPatronDelMal", "chumby", "Camilo Escobar Junior", FACULTIES[0],
+                "traquetoMan123@yahoo.com", 'm', 1);
+        User d = new User("cristancho666", "theBestPassword", "Camilo Cordoba", FACULTIES[0], "kamneklogs@gmail.com",
+                'm', 1);
+        User e = new User("elTicher", "iLoveTheCode", "Juan Manuel Reyes", FACULTIES[0], "seyerman@gmail.com", 'm', 1);
 
         db.addNode(a);
         db.addNode(b);
