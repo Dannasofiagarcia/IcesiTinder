@@ -17,30 +17,46 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="762.0" style="-fx-background-color: 0000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="emailTF" layoutX="75.0" layoutY="182.0" prefHeight="26.0" prefWidth="221.0" promptText="ls@amskda.com" />
-      <Label layoutX="117.0" layoutY="156.0" text="Correo electrónico" />
-      <Label layoutX="117.0" layoutY="221.0" text="Orientación sexual" />
-      <Label layoutX="117.0" layoutY="299.0" text="Nombre completo" />
-      <Label layoutX="142.0" layoutY="362.0" text="Facultad " />
-      <TextField fx:id="fullNameTF" layoutX="77.0" layoutY="326.0" prefHeight="26.0" prefWidth="221.0" promptText="asdassa" />
-      <TextField fx:id="facultySelected" layoutX="77.0" layoutY="388.0" prefHeight="26.0" prefWidth="190.0" promptText="Seleccione su facultad" />
-      <RadioButton fx:id="heteroRB" layoutX="85.0" layoutY="247.0" mnemonicParsing="false" text="Heterosexual">
+      <TextField fx:id="emailTF" layoutX="287.0" layoutY="115.0" prefHeight="26.0" prefWidth="242.0" promptText="ejemplo@correo.com" />
+      <Label layoutX="315.0" layoutY="68.0" text="Correo electrónico">
+         <font>
+            <Font size="21.0" />
+         </font></Label>
+      <Label layoutX="315.0" layoutY="167.0" text="Orientación sexual">
+         <font>
+            <Font size="21.0" />
+         </font></Label>
+      <Label layoutX="315.0" layoutY="264.0" text="Nombre completo">
+         <font>
+            <Font size="21.0" />
+         </font></Label>
+      <Label layoutX="364.0" layoutY="356.0" text="Facultad ">
+         <font>
+            <Font size="22.0" />
+         </font></Label>
+      <TextField fx:id="fullNameTF" layoutX="282.0" layoutY="307.0" prefHeight="26.0" prefWidth="249.0" promptText="Nombre Apellido" />
+      <TextField fx:id="facultySelected" layoutX="282.0" layoutY="400.0" prefHeight="26.0" prefWidth="210.0" promptText="Seleccione su facultad" />
+      <RadioButton fx:id="heteroRB" layoutX="219.0" layoutY="219.0" mnemonicParsing="false" text="Heterosexual">
          <toggleGroup>
             <ToggleGroup fx:id="sexOrTG" />
-         </toggleGroup></RadioButton>
-      <RadioButton fx:id="homoRB" layoutX="85.0" layoutY="271.0" mnemonicParsing="false" text="Homoxesual" toggleGroup="$sexOrTG" />
-      <Button layoutX="418.0" layoutY="394.0" mnemonicParsing="false" onAction="#updateProfile" text="Actualizar Datos" />
-      <ImageView fitHeight="249.0" fitWidth="296.0" layoutX="372.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@llama%20500.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="11.0" layoutY="1.0" prefHeight="51.0" prefWidth="296.0" text="INFORMACIÓN" textFill="#ffa44f">
+         </toggleGroup>
+         <font>
+            <Font size="18.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="homoRB" layoutX="433.0" layoutY="219.0" mnemonicParsing="false" text="Homosexual" toggleGroup="$sexOrTG">
+         <font>
+            <Font size="18.0" />
+         </font></RadioButton>
+      <Button layoutX="235.0" layoutY="458.0" mnemonicParsing="false" onAction="#updateProfile" text="Actualizar Datos">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Label layoutX="11.0" layoutY="1.0" prefHeight="51.0" prefWidth="296.0" text="INFORMACIÓN" textFill="#ff704f">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>
       </Label>
-      <MenuButton fx:id="faculty" layoutX="262.0" layoutY="388.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="15.0">
+      <MenuButton fx:id="faculty" layoutX="491.0" layoutY="399.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="15.0">
          <items>
             <MenuItem fx:id="ingenieriaMI" mnemonicParsing="false" text="Ingeniería" />
             <MenuItem fx:id="cieciasAdminMI" mnemonicParsing="false" text="Ciencias administrativas" />
@@ -69,7 +85,10 @@
             <Image url="@usuario.png" />
          </image>
       </ImageView>
-      <Button layoutX="28.0" layoutY="71.0" mnemonicParsing="false" onAction="#returnToMainAppView" text="Volver al inicio" />
+      <Button layoutX="454.0" layoutY="458.0" mnemonicParsing="false" onAction="#returnToMainAppView" text="Volver al inicio">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
    </children>
    <effect>
       <ColorAdjust />

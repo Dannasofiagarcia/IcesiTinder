@@ -17,11 +17,11 @@
                   <Image url="@Croods%20-%20Keeping%20in%20Touch.png" />
                </image>
             </ImageView>
-            <Hyperlink layoutX="512.0" layoutY="35.0" onAction="#signIn" prefHeight="40.0" prefWidth="127.0" text="Iniciar sesion">
+            <Hyperlink layoutX="515.0" layoutY="35.0" onAction="#signIn" prefHeight="40.0" prefWidth="127.0" text="Iniciar sesión">
                <font>
                   <Font size="20.0" />
                </font></Hyperlink>
-            <Hyperlink layoutX="644.0" layoutY="35.0" onAction="#signUp" text="Registrarme">
+            <Hyperlink layoutX="644.0" layoutY="35.0" onAction="#signUp" text="Registrarse">
                <font>
                   <Font size="20.0" />
                </font></Hyperlink>
