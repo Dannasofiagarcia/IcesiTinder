@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="335.0" prefWidth="357.0" style="-fx-border-color: #27ae60; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="20.0" layoutY="32.0" prefHeight="35.0" prefWidth="329.0" text="Modo lanzado &gt;:D" wrapText="true">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="81.0" prefHeight="35.0" prefWidth="213.0" text="Elige el tipo de conexion:" wrapText="true">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Hyperlink fx:id="confirmDirectConection" disable="true" layoutX="115.0" layoutY="262.0" onAction="#confirmDirectConection" text="Obtener conexion" />
+      <TextField fx:id="finalCategory" editable="false" layoutX="78.0" layoutY="168.0" />
+      <MenuButton layoutX="237.0" layoutY="168.0" mnemonicParsing="false">
+        <items>
+          <MenuItem fx:id="mejoresPanasCategory" mnemonicParsing="false" text="Mejores panas" />
+          <MenuItem fx:id="simplesPanasCategory" mnemonicParsing="false" text="Simples panas" />
+            <MenuItem fx:id="soloConocidosCategory" mnemonicParsing="false" text="Solo conocidos" />
+        </items>
+      </MenuButton>
+   </children>
+</Pane>

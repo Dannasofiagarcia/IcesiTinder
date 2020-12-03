@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import data_structures.WeightedGraph.Edge;
 import data_structures.WeightedGraph.Graph;
 
 public class MasterClass {
@@ -13,7 +14,7 @@ public class MasterClass {
 
     public Graph<User> db;
 
-    private HashMap<String, User> auxDb;
+    public HashMap<String, User> auxDb;
 
     private User currentUser;
 
@@ -33,8 +34,7 @@ public class MasterClass {
         User c = new User("escobar", "chumby", "Camilo Escobar", FACULTIES[0], "escobarelpatrondelmal@yahoo.com", 'm',
                 1);
         User d = new User("cordoba", "theBestPassword", "Camilo Cordoba", FACULTIES[0], "kamneklogs@gmail.com", 'm', 1);
-        User e = new User("1", "1", "Juan Manuel Reyes", FACULTIES[0], "seyerman@gmail.com", 'm',
-                1);
+        User e = new User("1", "1", "Juan Manuel Reyes", FACULTIES[0], "seyerman@gmail.com", 'm', 1);
 
         db.addNode(a);
         db.addNode(b);
@@ -149,6 +149,38 @@ public class MasterClass {
 
     public User getCurrentUser() {
         return currentUser;
+    }
+
+    public int getRelationForce(int hashCode) {
+
+        User temporal = null;
+        List<User> mySocialCircle = mySocialCircle();
+
+        int result = 0;
+        for (int i = 0; i < mySocialCircle.size(); i++) {
+
+            if (mySocialCircle.get(i).hashCode() == hashCode) {
+                temporal = mySocialCircle.get(i);
+            }
+
+        }
+
+        if (temporal == null) {
+            return result;
+        }
+
+        List<Edge<User>> myConnections = db.searchNode(currentUser.hashCode()).getEdges();
+
+        for (int i = 0; i < myConnections.size(); i++) {
+
+            if (myConnections.get(i).getDestination().getValue().hashCode() == temporal.hashCode()) {
+                return myConnections.get(i).getWeight();
+            }
+
+        }
+
+        return 0;
+
     }
 
 }

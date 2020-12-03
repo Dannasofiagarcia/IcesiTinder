@@ -68,7 +68,13 @@ public class ProfileViewController {
     private Label tittleViewPerfil;
 
     @FXML
-    public void initialize() {
+    private Pane paneToDoMatch;
+
+    @FXML
+    private Label statusConnectionL;
+
+    @FXML
+    public void initialize() throws IOException {
 
         User t = currentUserToShow;
 
@@ -85,11 +91,47 @@ public class ProfileViewController {
         nameLogged.setText(mc.getCurrentUser().getName());
 
         userNameL.setText(t.getUserName());
-        emailL.setText(t.getEmail());
+        if (currentUserToShow.getUserName().equals(mc.getCurrentUser().getUserName())) {
+            emailL.setText(t.getEmail());
+        } else {
+            emailL.setText("Privado");
+            // emailL.
+            emailL.setStyle("-fx-font-weight: bold;");
+        }
+
         fullNameL.setText(t.getName());
         facultyL.setText(t.getFaculty());
         genderL.setText(t.getGender());
         sexOrL.setText(t.getSexualOrientation());
+
+        paneToDoMatch.setVisible(false);
+
+        int tempForce = mc.getRelationForce(t.hashCode());
+
+        if (tempForce != 0) {
+            paneToDoMatch.setVisible(true);
+
+            if (tempForce == 1) {
+                statusConnectionL.setText("SON RE PANAS");
+            }
+
+            if (tempForce == 2) {
+                statusConnectionL.setText("SON SIMPLES AMIGOS");
+            }
+
+            if (tempForce == 3) {
+                statusConnectionL.setText("SON SIMPLES CONOCIDOS");
+            }
+
+        } else {
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/miniPaneToDoMatch.fxml"));
+            fxmlLoader.setController(new MiniController(paneToDoMatch, MainPane, mc, primaryStage, t.hashCode()));
+            Parent doMatch = fxmlLoader.load();
+            paneToDoMatch.getChildren().clear();
+            paneToDoMatch.getChildren().add(doMatch);
+
+        }
 
     }
 

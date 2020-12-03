@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="335.0" prefWidth="357.0" style="-fx-border-color: #27ae60; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="14.0" layoutY="108.0" prefHeight="60.0" prefWidth="302.0" text="Tenemos varias formas para que lo contactes, elije tu perfil:" wrapText="true">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Hyperlink layoutX="59.0" layoutY="273.0" onAction="#indirectMatch" text="Modo timido" />
+      <Hyperlink layoutX="180.0" layoutY="273.0" onAction="#directMatch" text="Modo lanzado ;)" />
+      <Label layoutX="18.0" layoutY="25.0" prefHeight="87.0" prefWidth="329.0" text="Que triste, aun no estan conectados :'(" wrapText="true">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="168.0" prefHeight="34.0" prefWidth="302.0" text="Modo timido: Si eres timido y aun no conoces a esta persona en la vida real." wrapText="true" />
+      <Label layoutX="26.0" layoutY="208.0" prefHeight="34.0" prefWidth="302.0" text="Modo lanzado: Si eres lanzado o ya conoces a esta persona en la vida real." wrapText="true" />
+   </children>
+</Pane>
