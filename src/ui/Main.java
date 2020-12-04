@@ -21,6 +21,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 
 		Stage wellcomeStage = new Stage(StageStyle.TRANSPARENT);
+		wellcomeStage.getIcons().add(new Image(Main.class.getResourceAsStream("iconT.png")));
 
 		wellcomeStage.setOpacity(1);
 
