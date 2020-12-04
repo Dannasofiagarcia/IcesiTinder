@@ -9,9 +9,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import data_structures.WeightedGraph.Edge;
-import data_structures.WeightedGraph.Node;
-
 public class DijkstraAlgorithmForAdjacencyList<V> {
 
     private final List<Edge<V>> edges;

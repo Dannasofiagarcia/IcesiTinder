@@ -1,16 +1,13 @@
 package ui;
 
 import java.io.IOException;
-import java.util.List;
 
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.DialogPane;
-import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -84,6 +81,7 @@ public class Main extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("IcesiTinder V0.1");
 		primaryStage.setResizable(false);
+		primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("iconT.png")));
 		primaryStage.show();
 	}
 
