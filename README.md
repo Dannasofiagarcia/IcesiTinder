@@ -18,7 +18,7 @@ TinderIcesi is a software system which seeks to solve the lack of communication 
 
 ## DEMO
 
-- Video demo [HERE](/docs/DEMO.mp4)
+- Video demo [HERE](/docs/DEMO_VIDEO.mp4)
 
 ## Program pictures
 
