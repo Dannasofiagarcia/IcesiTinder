@@ -132,7 +132,7 @@ public class Graph<V> {
 			edges.addAll(nodes.get(i).getEdges());
 		}
 
-		@SuppressWarnings("rawtypes")
+		@SuppressWarnings({ "unchecked", "rawtypes" })
 		DijkstraAlgorithmForAdjacencyList<V> dijkstra = new DijkstraAlgorithmForAdjacencyList(edges);
 
 		dijkstra.execute(adjList.get(hashCodeOrigin));
