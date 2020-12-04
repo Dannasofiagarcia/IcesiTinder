@@ -56,7 +56,7 @@
          <font>
             <Font size="20.0" />
          </font></Label>
-      <Label fx:id="statusUserName" layoutX="551.0" layoutY="111.0" />
+      <Label fx:id="statusUserName" layoutX="536.0" layoutY="118.0" prefHeight="25.0" prefWidth="146.0" />
       <PasswordField fx:id="passwordTF" layoutX="254.0" layoutY="218.0" prefHeight="25.0" prefWidth="258.0" promptText="Contraseña" />
       <TextField fx:id="facultySelected" editable="false" layoutX="254.0" layoutY="271.0" prefHeight="25.0" prefWidth="231.0" promptText="Seleccione su facultad" />
       <Hyperlink layoutX="310.0" layoutY="401.0" onAction="#confirmSignUp" text="Registrarme">
