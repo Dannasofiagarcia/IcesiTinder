@@ -1,5 +1,8 @@
 package ui;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -10,6 +13,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Hyperlink;
@@ -17,6 +22,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.MasterClass;
@@ -220,9 +226,9 @@ public class MainAppController {
 	@FXML
 	void saveSettings(ActionEvent event) {
 
-		if(modalityCB.isSelected()) {
+		if (modalityCB.isSelected()) {
 			mc.setDataStructureType(false);
-		}else {
+		} else {
 			mc.setDataStructureType(true);
 
 		}
@@ -233,22 +239,41 @@ public class MainAppController {
 		stageToSettings.close();
 
 	}
+
 	@FXML
-    private AnchorPane modalityAP;
-	
+	private AnchorPane modalityAP;
+
 	private CheckBox modalityCB;
 
 	@FXML
-	public void initialize() {
+	private ImageView miniPicProfile;
+
+	@FXML
+	public void initialize() throws FileNotFoundException {
 
 		nameLogged.setText(mc.getCurrentUser().getName());
 		nameLogged.setVisible(true);
-		
+
 		modalityCB = new CheckBox();
 		modalityCB.setText("Activar soporte con matriz de adyacencia");
-		
-		
-		
+
+		Circle circle = new Circle();
+		circle.setCenterX(miniPicProfile.getFitWidth() / 2);
+		circle.setCenterY(miniPicProfile.getFitHeight() / 2);
+		circle.setRadius(19.0f);
+
+		miniPicProfile.setClip(circle);
+
+		if (new File("data/" + mc.getCurrentUser().getUserName() + ".jpg").exists()) {
+			Image newPic = new Image(new FileInputStream("data/" + mc.getCurrentUser().getUserName() + ".jpg"));
+
+			miniPicProfile.setImage(newPic);
+		} else {
+			Image newPic = new Image(new FileInputStream("src/view/usuario.png"));
+
+			miniPicProfile.setImage(newPic);
+		}
+
 	}
 
 }

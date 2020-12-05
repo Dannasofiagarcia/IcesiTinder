@@ -36,7 +36,7 @@
             <Image url="@Croods%20-%20Standing%20(2).png" />
          </image>
       </ImageView>
-      <Label layoutX="466.0" layoutY="84.0" text="¡Hola de nuevo!">
+      <Label layoutX="463.0" layoutY="88.0" text="¡Hola de nuevo!">
          <font>
             <Font name="System Bold" size="39.0" />
          </font>

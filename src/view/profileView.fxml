@@ -15,6 +15,7 @@
 
 <Pane prefHeight="512.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
+      <ImageView fx:id="profileImage" fitHeight="335.0" fitWidth="357.0" layoutX="381.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="tittleViewPerfil" layoutX="14.0" layoutY="1.0" opacity="0.81" text="Mi perfil" textFill="#ff704f">
          <font>
             <Font name="System Bold" size="34.0" />
@@ -129,7 +130,7 @@
             <Font size="19.0" />
          </font>
       </Hyperlink>
-      <ImageView fitHeight="35.0" fitWidth="38.0" layoutX="429.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="miniPicProfile" fitHeight="35.0" fitWidth="38.0" layoutX="429.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@usuario.png" />
          </image>
@@ -145,12 +146,13 @@
                   <Font name="System Bold" size="37.0" />
                </font>
             </Label>
-            <Label fx:id="statusConnectionL" alignment="CENTER" layoutX="4.0" layoutY="137.0" prefHeight="129.0" prefWidth="349.0" text="Labelasjsakjsksaknsdaksdkjnask" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="statusConnectionL" alignment="CENTER" layoutX="4.0" layoutY="137.0" prefHeight="129.0" prefWidth="349.0" text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxx" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
             </Label>
          </children>
       </Pane>
+      <Hyperlink fx:id="setPropic" layoutX="600.0" layoutY="420.0" onAction="#setPropic" text="Cambiar foto" />
    </children>
 </Pane>
