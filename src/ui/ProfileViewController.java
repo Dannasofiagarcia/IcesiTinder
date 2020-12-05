@@ -226,6 +226,7 @@ public class ProfileViewController {
 		fileChooser.setTitle("Open Resource File");
 
 		fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+		
 		fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JPG", "*.jpg"));
 
 		File temp = fileChooser.showOpenDialog(mainController.primaryStage);
