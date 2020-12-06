@@ -1,0 +1,30 @@
+
+        User a = new User("andreNR19", "pinina", "Andrea Nuñez", FACULTIES[0], "andrea.nr2000@gmail.com", 'f', 1);
+        User b = new User("dannaSG18", "cloe", "Danna Garcia", FACULTIES[0], "dannita123@yahoo.com", 'f', 1);
+        User c = new User("escobarElPatronDelMal", "chumby", "Camilo Escobar Junior", FACULTIES[0],
+                "traquetoMan123@yahoo.com", 'm', 1);
+        User d = new User("cristancho666", "theBestPassword", "Camilo Cordoba", FACULTIES[0], "kamneklogs@gmail.com",
+                'm', 1);
+        User e = new User("elTicher", "iLoveTheCode", "Juan Manuel Reyes", FACULTIES[0], "seyerman@gmail.com", 'm', 1);
+
+        db.addNode(a);
+        db.addNode(b);
+        db.addNode(c);
+        db.addNode(d);
+        db.addNode(e);
+
+        auxDb.put(a.getUserName(), a);
+        auxDb.put(b.getUserName(), b);
+        auxDb.put(c.getUserName(), c);
+        auxDb.put(d.getUserName(), d);
+        auxDb.put(e.getUserName(), e);
+
+        db.addConnection(a.hashCode(), d.hashCode(), 3);
+
+        db.addConnection(a.hashCode(), c.hashCode(), 1);
+
+        db.addConnection(d.hashCode(), c.hashCode(), 2);
+
+        db.addConnection(c.hashCode(), e.hashCode(), 3);
+
+        db.addConnection(a.hashCode(), b.hashCode(), 3);

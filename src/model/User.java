@@ -1,6 +1,9 @@
 package model;
 
-public class User {
+import java.io.Serializable;
+
+@SuppressWarnings("all")
+public class User implements Serializable{
 
     private String name, faculty, email;
     private final String userName, password;

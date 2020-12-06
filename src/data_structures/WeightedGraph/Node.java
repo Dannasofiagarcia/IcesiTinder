@@ -1,9 +1,11 @@
 package data_structures.WeightedGraph;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Node<V> {
+@SuppressWarnings("all")
+public class Node<V> implements Serializable {
 
     private V value;
 

@@ -1,6 +1,9 @@
 package data_structures.WeightedGraph;
 
-public class Edge<V> {
+import java.io.Serializable;
+
+@SuppressWarnings("all")
+public class Edge<V> implements Serializable {
     private Node<V> origin;
     private Node<V> destination;
     private int weight;

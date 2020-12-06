@@ -1,5 +1,6 @@
 package data_structures.WeightedGraph;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -7,7 +8,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class Graph<V> {
+@SuppressWarnings("all")
+public class Graph<V> implements Serializable {
 
 	private Map<Integer, Node<V>> adjList;
 	private int nV;

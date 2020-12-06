@@ -20,9 +20,9 @@ public class MainController {
     private MasterClass mc;
     Stage primaryStage;
 
-    public MainController(Stage primaryStage) {
-        mc = new MasterClass();
+    public MainController(Stage primaryStage, MasterClass mc) {
         this.primaryStage = primaryStage;
+        this.mc = mc;
     }
 
     @FXML

@@ -1,14 +1,18 @@
 package ui;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.WindowEvent;
+import model.MasterClass;
 
 public class Main extends Application {
 
@@ -20,7 +24,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 
 		Stage wellcomeStage = new Stage(StageStyle.TRANSPARENT);
-		
+
 		wellcomeStage.getIcons().add(new Image(Main.class.getResourceAsStream("iconT.png")));
 
 		wellcomeStage.setOpacity(1);
@@ -73,8 +77,8 @@ public class Main extends Application {
 	public void t(Stage primaryStage, Stage w) throws IOException {
 		w.close();
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
-
-		fxmlLoader.setController(new MainController(primaryStage));
+		MasterClass mc = new MasterClass();
+		fxmlLoader.setController(new MainController(primaryStage, mc));
 		Parent root = fxmlLoader.load();
 
 		Scene scene = new Scene(root);
@@ -83,6 +87,23 @@ public class Main extends Application {
 		primaryStage.setTitle("IcesiTinder V0.1");
 		primaryStage.setResizable(false);
 		primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("iconT.png")));
+		primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+			public void handle(WindowEvent arg0) {
+				try {
+					mc.saveData();
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			};
+		});
+
+		try {
+			mc.loadData();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 		primaryStage.show();
 	}
 

@@ -130,7 +130,6 @@ public class MainAppController {
 				try {
 					searchUserFunction(userNameToSearch.getText(), stageToSearch);
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

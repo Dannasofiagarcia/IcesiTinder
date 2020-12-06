@@ -1,5 +1,11 @@
 package model;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,36 +34,6 @@ public class MasterClass {
         auxDb = new HashMap<String, User>();
 
         dataStructureType = true;
-
-        User a = new User("andreNR19", "pinina", "Andrea Nuñez", FACULTIES[0], "andrea.nr2000@gmail.com", 'f', 1);
-        User b = new User("dannaSG18", "cloe", "Danna Garcia", FACULTIES[0], "dannita123@yahoo.com", 'f', 1);
-        User c = new User("escobarElPatronDelMal", "chumby", "Camilo Escobar Junior", FACULTIES[0],
-                "traquetoMan123@yahoo.com", 'm', 1);
-        User d = new User("cristancho666", "theBestPassword", "Camilo Cordoba", FACULTIES[0], "kamneklogs@gmail.com",
-                'm', 1);
-        User e = new User("elTicher", "iLoveTheCode", "Juan Manuel Reyes", FACULTIES[0], "seyerman@gmail.com", 'm', 1);
-
-        db.addNode(a);
-        db.addNode(b);
-        db.addNode(c);
-        db.addNode(d);
-        db.addNode(e);
-
-        auxDb.put(a.getUserName(), a);
-        auxDb.put(b.getUserName(), b);
-        auxDb.put(c.getUserName(), c);
-        auxDb.put(d.getUserName(), d);
-        auxDb.put(e.getUserName(), e);
-
-        db.addConnection(a.hashCode(), d.hashCode(), 3);
-
-        db.addConnection(a.hashCode(), c.hashCode(), 1);
-
-        db.addConnection(d.hashCode(), c.hashCode(), 2);
-
-        db.addConnection(c.hashCode(), e.hashCode(), 3);
-
-        db.addConnection(a.hashCode(), b.hashCode(), 3);
 
     }
 
@@ -190,6 +166,35 @@ public class MasterClass {
 
     public void setDataStructureType(boolean dataStructureType) {
         this.dataStructureType = dataStructureType;
+    }
+
+    public void saveData() throws FileNotFoundException, IOException {
+
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/backups/backupAux.dat"));
+
+        oos.writeObject(auxDb);
+        oos.close();
+
+        oos = new ObjectOutputStream(new FileOutputStream("data/backups/backupMain.dat"));
+        oos.writeObject(db);
+
+        oos.close();
+    }
+
+    @SuppressWarnings("unchecked")
+    public void loadData() throws ClassNotFoundException, IOException {
+
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data/backups/backupAux.dat"));
+
+        auxDb = (HashMap<String, User>) ois.readObject();
+
+        ois.close();
+
+        ois = new ObjectInputStream(new FileInputStream("data/backups/backupMain.dat"));
+
+        db = (Graph<User>) ois.readObject();
+
+        ois.close();
     }
 
 }
